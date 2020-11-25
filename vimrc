@@ -74,10 +74,11 @@ let &colorcolumn=join(range(81,999),",")
 
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
-\   'typescript': ['tslint', 'prettier'],
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'prettier'],
 \}
 let g:ale_linters = {
-\   'typescript': ['tslint', 'prettier', 'tsserver', 'typecheck'],
+\   'typescript': ['eslint', 'prettier', 'tsserver', 'typecheck'],
 \}
 let g:ale_javascript_prettier_options = '--single-quote'
 let g:ale_typescript_prettier_options = '--single-quote'
