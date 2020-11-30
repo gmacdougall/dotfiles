@@ -40,8 +40,19 @@ alias vf="vim \$(rg . --color never -l -g '' | fzy)"
 alias dc="docker-compose"
 alias dcr="docker-compose run"
 alias g="git"
+alias rs="bin/rails s -b 0.0.0.0"
+alias rc="bin/rails c"
+alias dbm="bin/rails db:migrate"
+alias dbmd="bin/rails db:migrate:down"
+alias dbtp="bin/rails db:test:prepare"
+alias st="bin/rails sorbet:type_check_for_ci"
 
 export DB_USER='gregor'
 export TERM='screen-256color'
 export EDITOR='/usr/bin/vim'
+export GPG_TTY=$(tty)
 eval "$(direnv hook zsh)"
+
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
