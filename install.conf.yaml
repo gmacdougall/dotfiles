@@ -1,0 +1,20 @@
+- clean: ['~']
+
+- link:
+    ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/fish_plugins: config/fish/fish_plugins
+    ~/.config/fish/fish_variables: config/fish/fish_variables
+    ~/.config/nvim/init.vim: config/nvim/init.vim
+    ~/.local/bin/24_bit_color: local/bin/24_bit_color
+    ~/.local/bin/batgrep: bat-extras/src/batgrep.sh
+    ~/.local/bin/ruby-install: ruby-install/bin/ruby-install
+    ~/.local/share/ruby-install: ruby-install/share/ruby-install
+    ~/.local/share/man/man1/ruby-install.1: ruby-install/share/man/man1/ruby-install.1
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.inputrc: inputrc
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
