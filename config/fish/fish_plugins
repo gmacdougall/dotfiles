@@ -1,4 +1,5 @@
 jorgebucaran/fisher
-oh-my-fish/plugin-bang-bang
 PatrickF1/fzf.fish
 danhper/fish-ssh-agent
+oh-my-fish/plugin-chruby
+jorgebucaran/nvm.fish

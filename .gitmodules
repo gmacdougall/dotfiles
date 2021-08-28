@@ -10,3 +10,6 @@
 [submodule "chruby"]
 	path = chruby
 	url = git@github.com:postmodern/chruby.git
+[submodule "chruby-fish"]
+	path = chruby-fish
+	url = git@github.com:JeanMertz/chruby-fish.git
