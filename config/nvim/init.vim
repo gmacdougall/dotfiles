@@ -39,9 +39,6 @@ filetype plugin indent on
 
 colorscheme detailed
 
-set backupdir=~/.vim/backup
-set dir=~/.vim/swap
-set undodir=~/.vim/undo
 set number
 
 set shiftwidth=2
