@@ -31,6 +31,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -80,3 +81,7 @@ let g:ale_linters = {
 \   'typescript': ['tslint', 'prettier', 'tsserver', 'typecheck'],
 \}
 let g:ale_fix_on_save = 0
+
+lua << EOF
+-- require'lspconfig'.denols.setup{}
+EOF
