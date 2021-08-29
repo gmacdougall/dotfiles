@@ -5,6 +5,7 @@
     - ~/.local/bin
     - ~/.local/share/chruby
     - ~/.local/share/man/man1
+    - ~/.local/share/nvim/site/autoload
 
 - link:
     ~/.config/fish/config.fish: config/fish/config.fish
@@ -19,6 +20,7 @@
     ~/.local/share/chruby/chruby.fish: chruby-fish/share/chruby/chruby.fish
     ~/.local/share/ruby-install: ruby-install/share/ruby-install
     ~/.local/share/man/man1/ruby-install.1: ruby-install/share/man/man1/ruby-install.1
+    ~/.local/share/nvim/site/autoload/plug.vim: vim-plug/plug.vim
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
