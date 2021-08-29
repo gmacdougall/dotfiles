@@ -1,3 +1,3 @@
 # Dotfiles
 
-Manage this wich rcm
+Manage my dotfiles with dotbot
