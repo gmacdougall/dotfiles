@@ -6,11 +6,12 @@
     - ~/.local/share/chruby
     - ~/.local/share/man/man1
     - ~/.local/share/nvim/site/autoload
+    - ~/.nvim/undodir
 
 - link:
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/fish/fish_plugins: config/fish/fish_plugins
-    ~/.config/nvim/init.vim: config/nvim/init.vim
+    ~/.config/nvim: config/nvim
     ~/.local/bin/24_bit_color: local/bin/24_bit_color
     ~/.local/bin/batgrep: bat-extras/src/batgrep.sh
     ~/.local/bin/ruby-install: ruby-install/bin/ruby-install

@@ -26,7 +26,7 @@
 [rebase]
   autosquash = true
 [core]
-  editor = /usr/local/bin/nvim
+  editor = /usr/bin/nvim
   excludesfile = /home/gmacdougall/.gitignore_global
 [user]
   email = gmacdougall0+github@gmail.com
