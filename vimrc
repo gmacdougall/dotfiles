@@ -1,3 +1,19 @@
+"
+"
+"
+"
+"
+"
+"
+" Use nvim instead
+"
+"
+"
+"
+"
+"
+"
+"
 set nocompatible
 filetype off
 

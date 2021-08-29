@@ -32,6 +32,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
 Plug 'neovim/nvim-lspconfig'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -51,21 +53,7 @@ vmap K \<noop>
 
 let mapleader = "\<Space>"
 
-function! FzyCommand(choice_command, vim_command)
-  try
-    let output = system(a:choice_command . " | fzy ")
-  catch /Vim:Interrupt/
-    " Swallow errors from ^C, allow redraw! below
-  endtry
-  redraw!
-  if v:shell_error == 0 && !empty(output)
-    exec a:vim_command . ' ' . output
-  endif
-endfunction
-
-nnoremap <leader>e :call FzyCommand("rg . -l -g ''", ":e")<cr>
-nnoremap <leader>v :call FzyCommand("rg . -l -g ''", ":vs")<cr>
-nnoremap <leader>s :call FzyCommand("rg . -l -g ''", ":sp")<cr>
+nnoremap <leader>e :GFiles<cr>
 nnoremap <leader>f :ALEFix<cr>
 
 let &colorcolumn=join(range(81,999),",")
