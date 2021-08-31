@@ -5,6 +5,7 @@ abbr -a -U -- dc docker-compose
 abbr -a -U -- g git
 
 set -U CHRUBY_ROOT $HOME/.local
+set -gx GPG_TTY (tty)
 
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
