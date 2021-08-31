@@ -46,10 +46,6 @@ return require('packer').startup(function(use)
   --use 'tpope/vim-rails'
   --use 'vim-ruby/vim-ruby'
 
-  -- Replace with LSP
-  use 'prettier/vim-prettier'
-  use 'dense-analysis/ale'
-
   use 'MarcWeber/vim-addon-local-vimrc'
   use 'Raimondi/delimitMate'
   use 'bling/vim-airline'
@@ -86,16 +82,4 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use {
-    'kabouzeid/nvim-lspinstall',
-    requires = { { 'neovim/nvim-lspconfig' } },
-    config = function()
-      require'lspinstall'.setup()
-
-      local servers = require'lspinstall'.installed_servers()
-      for _, server in pairs(servers) do
-        require'lspconfig'[server].setup{}
-      end
-    end
-  }
 end)
