@@ -43,12 +43,12 @@ return require('packer').startup(function(use)
   --use 'peitalin/vim-jsx-typescript'
 
   -- Ruby stuff
-  use 'tpope/vim-rails'
-  use 'vim-ruby/vim-ruby'
+  --use 'tpope/vim-rails'
+  --use 'vim-ruby/vim-ruby'
 
   -- Replace with LSP
   use 'prettier/vim-prettier'
-  use 'w0rp/ale'
+  use 'dense-analysis/ale'
 
   use 'MarcWeber/vim-addon-local-vimrc'
   use 'Raimondi/delimitMate'
@@ -64,7 +64,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-markdown'
   use 'tpope/vim-sensible'
   use 'tpope/vim-sleuth'
-  use 'neovim/nvim-lspconfig'
 
   -- New stuff
   use { 'junegunn/fzf', run = './install --all' }
@@ -83,5 +82,20 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
     config = function() require("telescope").load_extension("mapper") end
+  }
+
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  use {
+    'kabouzeid/nvim-lspinstall',
+    requires = { { 'neovim/nvim-lspconfig' } },
+    config = function()
+      require'lspinstall'.setup()
+
+      local servers = require'lspinstall'.installed_servers()
+      for _, server in pairs(servers) do
+        require'lspconfig'[server].setup{}
+      end
+    end
   }
 end)
