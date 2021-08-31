@@ -27,7 +27,7 @@
   autosquash = true
 [core]
   editor = /usr/bin/nvim
-  excludesfile = /home/gmacdougall/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [user]
   email = gmacdougall0+github@gmail.com
   name = Gregor MacDougall

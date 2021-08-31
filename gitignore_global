@@ -2,4 +2,5 @@
 .netrwhist
 .vimrc.local
 .vimrc
+.solargraph.yml
 **/vendor/bundle/*

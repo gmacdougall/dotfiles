@@ -82,4 +82,11 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+
+  -- Language packs
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function() vim.cmd [[TSUpdate]] end,
+    config = function() require('gm.plugins.treesitter') end
+  }
 end)
