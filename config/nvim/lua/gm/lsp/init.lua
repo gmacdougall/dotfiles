@@ -1,5 +1,3 @@
-require'lspconfig'.solargraph.setup{}
-
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -32,17 +30,24 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
 end
+
+local default_lsp_config = {
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+  --capabilities = lsp_status.capabilities
+}
+local language_server_path = vim.fn.stdpath("cache") .. "/lspconfig"
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "solargraph" }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+local servers = {
+  solargraph = {},
+  efm = require('gm.lsp.servers.efm')(language_server_path),
+}
+
+for server, config in pairs(servers) do
+  nvim_lsp[server].setup(vim.tbl_deep_extend("force", default_lsp_config, config))
 end
