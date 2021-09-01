@@ -46,20 +46,10 @@ return require('packer').startup(function(use)
   --use 'tpope/vim-rails'
   --use 'vim-ruby/vim-ruby'
 
-  use 'MarcWeber/vim-addon-local-vimrc'
-  use 'Raimondi/delimitMate'
   use 'bling/vim-airline'
-  use 'bronson/vim-trailing-whitespace'
-  use 'editorconfig/editorconfig-vim'
-  use 'ekalinin/Dockerfile.vim'
   use 'rking/vim-detailed'
-  use 'rust-lang/rust.vim'
   use 'spolu/dwm.vim'
-  use 'tpope/vim-endwise'
   use 'tpope/vim-fugitive'
-  use 'tpope/vim-markdown'
-  use 'tpope/vim-sensible'
-  use 'tpope/vim-sleuth'
 
   -- New stuff
   use { 'junegunn/fzf', run = './install --all' }
