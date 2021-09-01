@@ -51,13 +51,6 @@ return require('packer').startup(function(use)
   use 'spolu/dwm.vim'
   use 'tpope/vim-fugitive'
 
-  -- New stuff
-  use { 'junegunn/fzf', run = './install --all' }
-  use {
-    'junegunn/fzf.vim',
-    config = function() require('gm.plugins.fzf') end
-  }
-
   use {
     "lazytanuki/nvim-mapper",
     config = function() require("nvim-mapper").setup{} end,
@@ -67,7 +60,10 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-    config = function() require("telescope").load_extension("mapper") end
+    config = function()
+      require("telescope").load_extension("mapper")
+      require('gm.plugins.telescope')
+    end
   }
 
   -- LSP
