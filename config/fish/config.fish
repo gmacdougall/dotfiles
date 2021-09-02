@@ -2,8 +2,10 @@ starship init fish | source
 fish_vi_key_bindings
 
 abbr -a -U -- dc docker-compose
+abbr -a -U -- ds devspace
 abbr -a -U -- g git
 abbr -a -U -- gp git push -u origin HEAD
+abbr -a -U -- y yarn
 
 set -U CHRUBY_ROOT $HOME/.local
 set -gx GPG_TTY (tty)
