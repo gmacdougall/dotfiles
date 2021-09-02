@@ -46,7 +46,6 @@ return require('packer').startup(function(use)
   --use 'tpope/vim-rails'
   --use 'vim-ruby/vim-ruby'
 
-  use 'bling/vim-airline'
   use 'rking/vim-detailed'
   use 'spolu/dwm.vim'
   use 'tpope/vim-fugitive'
@@ -74,5 +73,18 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = function() vim.cmd [[TSUpdate]] end,
     config = function() require('gm.plugins.treesitter') end
+  }
+
+  use {
+    "SmiteshP/nvim-gps",
+    requires = "nvim-treesitter/nvim-treesitter",
+    config = function() require('nvim-gps').setup({}) end
+  }
+
+  use {
+    'glepnir/galaxyline.nvim',
+    branch = 'main',
+    config = function() require'gm.plugins.galaxyline' end,
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 end)

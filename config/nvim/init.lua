@@ -1,5 +1,6 @@
 require 'gm.plugins'
 
+require 'gm.utils'
 require 'gm.defaults'
 
 require 'gm.lsp'
