@@ -13,4 +13,4 @@ set -gx EDITOR vim
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 
-alias vf="vim (fzf)"
+alias vf="vim -c ':Telescope find_files'"
