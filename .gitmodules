@@ -1,15 +1,15 @@
 [submodule "bat-extras"]
 	path = bat-extras
-	url = git@github.com:eth-p/bat-extras.git
+	url = git://github.com/eth-p/bat-extras.git
 [submodule "dotbot"]
 	path = dotbot
-	url = git@github.com:anishathalye/dotbot.git
+	url = git://github.com/anishathalye/dotbot.git
 [submodule "ruby-install"]
 	path = ruby-install
-	url = git@github.com:postmodern/ruby-install.git
+	url = git://github.com/postmodern/ruby-install.git
 [submodule "chruby"]
 	path = chruby
-	url = git@github.com:postmodern/chruby.git
+	url = git://github.com/postmodern/chruby.git
 [submodule "chruby-fish"]
 	path = chruby-fish
-	url = git@github.com:JeanMertz/chruby-fish.git
+	url = git://github.com/JeanMertz/chruby-fish.git
