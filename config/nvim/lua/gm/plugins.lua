@@ -35,7 +35,6 @@ return require('packer').startup(function(use)
     opt = true
   }
 
-  use 'rking/vim-detailed'
   use 'tpope/vim-fugitive'
 
   use {
