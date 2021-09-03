@@ -35,19 +35,7 @@ return require('packer').startup(function(use)
     opt = true
   }
 
-  -- JS Stuff
-  --use 'HerringtonDarkholme/yats.vim'
-  --use 'elzr/vim-json'
-  --use 'mxw/vim-jsx'
-  --use 'pangloss/vim-javascript'
-  --use 'peitalin/vim-jsx-typescript'
-
-  -- Ruby stuff
-  --use 'tpope/vim-rails'
-  --use 'vim-ruby/vim-ruby'
-
   use 'rking/vim-detailed'
-  use 'spolu/dwm.vim'
   use 'tpope/vim-fugitive'
 
   use {
@@ -58,11 +46,27 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+    requires = {
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+      {'kyazdani42/nvim-web-devicons'}
+    },
     config = function()
       require("telescope").load_extension("mapper")
       require('gm.plugins.telescope')
     end
+  }
+
+	use {
+		'romgrk/barbar.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'},
+    config = function() require('gm.plugins.barbar') end,
+	}
+
+  -- Theme
+  use {
+    'bluz71/vim-moonfly-colors',
+    config = function() vim.cmd('colorscheme moonfly') end,
   }
 
   -- LSP
@@ -84,7 +88,7 @@ return require('packer').startup(function(use)
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
-    config = function() require'gm.plugins.galaxyline' end,
+    config = function() require('gm.plugins.galaxyline') end,
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 end)
