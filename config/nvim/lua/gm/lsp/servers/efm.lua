@@ -2,6 +2,7 @@ local lsp = require('lspconfig')
 
 local prettier_d = require "gm.lsp.servers.formatters.prettier_d"
 local eslint_d = require "gm.lsp.servers.linters.eslint_d"
+local rubocop = require "gm.lsp.servers.linters.rubocop"
 
 local formatter = prettier_d
 local linter = eslint_d
@@ -21,6 +22,7 @@ local languages = {
   scss = {formatter},
   css = {formatter},
   markdown = {formatter},
+  ruby={rubocop},
 }
 
 local efm_config = os.getenv('HOME') ..
@@ -33,16 +35,18 @@ return function(language_server_path)
         bin_path,
         "-c",
         efm_config,
-        --[[ "-loglevel",
+        "-loglevel",
         "10",
         "-logfile",
-        "/tmp/efm.log" ]]
+        "/tmp/efm.log"
       },
       root_dir = function(fname)
         local cwd = lsp.util
         .root_pattern("tsconfig.json")(fname) or
         lsp.util
         .root_pattern(".eslintrc.json", ".git")(fname) or
+        lsp.util
+        .root_pattern("Gemfile", ".git")(fname) or
         lsp.util.root_pattern("package.json", ".git/",
         ".zshrc")(fname);
         return cwd
