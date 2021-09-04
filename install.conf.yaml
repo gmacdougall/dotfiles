@@ -4,8 +4,6 @@
     - ~/.config/efm-langserver
     - ~/.config/fish
     - ~/.local/bin
-    - ~/.local/share/chruby
-    - ~/.local/share/man/man1
     - ~/.nvim/undodir
 
 - link:
@@ -15,14 +13,6 @@
     ~/.config/nvim: config/nvim
     ~/.local/bin/24_bit_color: local/bin/24_bit_color
     ~/.local/bin/rubocop-daemon-wrapper: local/bin/rubocop-daemon-wrapper
-    ~/.local/bin/batgrep: bat-extras/src/batgrep.sh
-    ~/.local/bin/ruby-install: ruby-install/bin/ruby-install
-    ~/.local/share/chruby/auto.sh: chruby/share/chruby/auto.sh
-    ~/.local/share/chruby/chruby.sh: chruby/share/chruby/chruby.sh
-    ~/.local/share/chruby/auto.fish: chruby-fish/share/chruby/auto.fish
-    ~/.local/share/chruby/chruby.fish: chruby-fish/share/chruby/chruby.fish
-    ~/.local/share/ruby-install: ruby-install/share/ruby-install
-    ~/.local/share/man/man1/ruby-install.1: ruby-install/share/man/man1/ruby-install.1
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
