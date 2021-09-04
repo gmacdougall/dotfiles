@@ -11,7 +11,10 @@ return require('packer').startup(function(use)
 
   use {
     "lazytanuki/nvim-mapper",
-    config = function() require("nvim-mapper").setup{} end,
+    config = function()
+      require("nvim-mapper").setup{}
+      require("gm.plugins.nvim-mapper")
+    end,
     before = "telescope.nvim"
   }
 
@@ -30,7 +33,10 @@ return require('packer').startup(function(use)
 
   use {
     'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      "lazytanuki/nvim-mapper",
+    },
     config = function() require('gm.plugins.barbar') end,
   }
 
