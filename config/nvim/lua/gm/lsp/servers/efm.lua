@@ -29,10 +29,9 @@ local efm_config = os.getenv('HOME') ..
                          '/.config/efm-langserver/config.yaml'
 
 return function(language_server_path)
-    local bin_path = language_server_path .. "/efm-langserver/efm-langserver"
     return {
       cmd = {
-        bin_path,
+        "efm-langserver",
         "-c",
         efm_config,
         "-loglevel",
