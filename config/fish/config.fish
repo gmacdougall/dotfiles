@@ -11,7 +11,13 @@ abbr -a -U -- vs vagrant ssh
 abbr -a -U -- vu vagrant up
 abbr -a -U -- y yarn
 
-set -U CHRUBY_ROOT $HOME/.local
+# I install packages at different places in arch
+if test -e /usr/bin/pacman
+  set -U CHRUBY_ROOT /usr
+else
+  set -U CHRUBY_ROOT $HOME/.local
+end
+
 set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type f"
 set -gx EDITOR vim
