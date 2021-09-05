@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
   -- LSP
   use {
     'neovim/nvim-lspconfig',
+    requires = "lazytanuki/nvim-mapper",
     config = function() require('gm.lsp') end,
   }
   use 'kabouzeid/nvim-lspinstall'
