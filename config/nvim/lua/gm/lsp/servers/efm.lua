@@ -26,36 +26,34 @@ local languages = {
 local efm_config = os.getenv('HOME') ..
                          '/.config/efm-langserver/config.yaml'
 
-return function(language_server_path)
-    return {
-      cmd = {
-        "efm-langserver",
-        "-c",
-        efm_config,
-        "-loglevel",
-        "10",
-        "-logfile",
-        "/tmp/efm.log"
-      },
-      root_dir = function(fname)
-        local cwd = lsp.util
-        .root_pattern("tsconfig.json")(fname) or
-        lsp.util
-        .root_pattern(".eslintrc.json", ".git")(fname) or
-        lsp.util
-        .root_pattern("Gemfile", ".git")(fname) or
-        lsp.util.root_pattern("package.json", ".git/",
-        ".zshrc")(fname);
-        return cwd
-      end,
-      filetypes = vim.tbl_keys(languages),
-      init_options = {
-        documentFormatting = true
-      },
-      settings = {
-        rootMarkers = { "package.json", ".git" },
-        lintDebounce = 500,
-        languages = languages
-      },
-    }
-  end
+return {
+  cmd = {
+    "efm-langserver",
+    "-c",
+    efm_config,
+    "-loglevel",
+    "10",
+    "-logfile",
+    "/tmp/efm.log"
+  },
+  root_dir = function(fname)
+    local cwd = lsp.util
+    .root_pattern("tsconfig.json")(fname) or
+    lsp.util
+    .root_pattern(".eslintrc.json", ".git")(fname) or
+    lsp.util
+    .root_pattern("Gemfile", ".git")(fname) or
+    lsp.util.root_pattern("package.json", ".git/",
+    ".zshrc")(fname);
+    return cwd
+  end,
+  filetypes = vim.tbl_keys(languages),
+  init_options = {
+    documentFormatting = true
+  },
+  settings = {
+    rootMarkers = { "package.json", ".git" },
+    lintDebounce = 500,
+    languages = languages
+  },
+}
