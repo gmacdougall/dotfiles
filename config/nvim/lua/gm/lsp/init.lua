@@ -76,6 +76,7 @@ local language_server_path = vim.fn.stdpath("cache") .. "/lspconfig"
 local servers = {
   efm = require('gm.lsp.servers.efm'),
   solargraph = {},
+  sorbet = require('gm.lsp.servers.sorbet'),
   tsserver = require('gm.lsp.servers.tsserver')(on_attach),
 }
 
