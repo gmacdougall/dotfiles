@@ -2,7 +2,6 @@ local lsp = require('lspconfig')
 
 local prettier_d = require "gm.lsp.servers.formatters.prettier_d"
 local eslint_d = require "gm.lsp.servers.linters.eslint_d"
-local rubocop = require "gm.lsp.servers.linters.rubocop"
 
 local formatter = prettier_d
 local linter = eslint_d
@@ -22,7 +21,6 @@ local languages = {
   scss = {formatter},
   css = {formatter},
   markdown = {formatter},
-  ruby={rubocop},
 }
 
 local efm_config = os.getenv('HOME') ..

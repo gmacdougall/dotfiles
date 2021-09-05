@@ -44,6 +44,7 @@ local language_server_path = vim.fn.stdpath("cache") .. "/lspconfig"
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
+  solargraph = {},
   efm = require('gm.lsp.servers.efm')(language_server_path),
   tsserver = require('gm.lsp.servers.tsserver')(language_server_path, on_attach),
 }
