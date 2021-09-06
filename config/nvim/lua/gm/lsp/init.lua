@@ -69,7 +69,6 @@ local default_lsp_config = {
   }
   --capabilities = lsp_status.capabilities
 }
-local language_server_path = vim.fn.stdpath("cache") .. "/lspconfig"
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -77,6 +76,9 @@ local servers = {
   efm = require('gm.lsp.servers.efm'),
   solargraph = {},
   sorbet = require('gm.lsp.servers.sorbet'),
+  sumneko_lua = {
+    cmd = { 'lua-language-server' },
+  },
   tsserver = require('gm.lsp.servers.tsserver')(on_attach),
 }
 

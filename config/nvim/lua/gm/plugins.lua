@@ -75,6 +75,16 @@ return require('packer').startup(function(use)
     config = function() require('nvim-gps').setup({}) end
   }
 
+  -- Lua Development
+  use {
+    'tjdevries/nlua.nvim',
+    requires = {
+      'neovim/nvim-lspconfig',
+      'nvim-lua/completion-nvim',
+      'euclidianAce/BetterLua.vim',
+    },
+  }
+
   use {
     'glepnir/galaxyline.nvim',
     branch = 'main',
