@@ -73,6 +73,7 @@ local default_lsp_config = {
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
+  denols = require('gm.lsp.servers.deno'),
   efm = require('gm.lsp.servers.efm'),
   solargraph = {},
   sorbet = require('gm.lsp.servers.sorbet'),
