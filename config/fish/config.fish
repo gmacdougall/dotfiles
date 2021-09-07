@@ -22,7 +22,8 @@ set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type f"
 set -gx EDITOR vim
 
-fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
+fish_add_path $HOME/.deno/bin
+fish_add_path $HOME/.local/bin
 
 alias vf="vim -c ':Telescope find_files'"
