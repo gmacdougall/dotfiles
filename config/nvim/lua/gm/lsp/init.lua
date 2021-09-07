@@ -31,7 +31,7 @@ local on_attach = function(client, bufnr)
     'Bring up the hover menu for the symbol under the cursor'
   )
   buf_set_keymap(
-    "<space>f",
+    "<space>lf",
     "<cmd>lua vim.lsp.buf.formatting()<CR>",
     "lsp_format",
     "Auto-format the current file"
