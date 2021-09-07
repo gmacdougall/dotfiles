@@ -18,6 +18,8 @@ else
   set -U CHRUBY_ROOT $HOME/.local
 end
 
+set fish_greeting
+
 set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type f"
 set -gx EDITOR vim
