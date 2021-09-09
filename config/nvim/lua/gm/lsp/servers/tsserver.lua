@@ -1,3 +1,5 @@
+local lsp = require('lspconfig')
+
 return function(on_attach)
   local bin_path = "typescript-language-server"
   return {
@@ -7,6 +9,7 @@ return function(on_attach)
 
       -- formatting is delegated to prettier
       client.resolved_capabilities.document_formatting = false
-    end
+    end,
+    root_dir = lsp.util.root_pattern("tsconfig.json"),
   }
 end

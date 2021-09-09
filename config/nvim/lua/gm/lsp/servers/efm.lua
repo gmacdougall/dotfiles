@@ -37,14 +37,10 @@ return {
     "/tmp/efm.log"
   },
   root_dir = function(fname)
-    local cwd = lsp.util
-    .root_pattern("tsconfig.json")(fname) or
-    lsp.util
-    .root_pattern(".eslintrc.json", ".git")(fname) or
-    lsp.util
-    .root_pattern("Gemfile", ".git")(fname) or
-    lsp.util.root_pattern("package.json", ".git/",
-    ".zshrc")(fname);
+    local cwd = lsp.util.root_pattern("tsconfig.json")(fname) or
+    lsp.util.root_pattern(".eslintrc.json")(fname) or
+    lsp.util.root_pattern("Gemfile")(fname) or
+    lsp.util.root_pattern("package.json")(fname);
     return cwd
   end,
   filetypes = vim.tbl_keys(languages),
@@ -52,7 +48,7 @@ return {
     documentFormatting = true
   },
   settings = {
-    rootMarkers = { "package.json", ".git" },
+    rootMarkers = { "package.json", "tsconfig.json" },
     lintDebounce = 500,
     languages = languages
   },
