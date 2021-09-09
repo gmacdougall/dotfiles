@@ -27,18 +27,13 @@
   autosquash = true
 [core]
   editor = /usr/bin/nvim
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.config/git/ignore_global
 [user]
   email = gmacdougall0+github@gmail.com
   name = Gregor MacDougall
 [merge]
   conflictstyle = diff3
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
 [include]
-  path = ~/.gitconfig.local
+  path = ~/.config/git/config.local
 [init]
   defaultBranch = main

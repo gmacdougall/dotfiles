@@ -1,8 +1,13 @@
-- clean: ['~']
+- clean:
+    ~/:
+      force: false
+    ~/.config:
+      recursive: true
 
 - create:
     - ~/.config/efm-langserver
     - ~/.config/fish
+    - ~/.config/git
     - ~/.local/bin
     - ~/.nvim/undodir
 
@@ -10,6 +15,8 @@
     ~/.config/efm-langserver/config.yaml:  config/efm-langserver/config.yaml
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/fish/fish_plugins: config/fish/fish_plugins
+    ~/.config/git/config: config/git/config
+    ~/.config/git/ignore_global: config/git/ignore_global
     ~/.config/nvim: config/nvim
     ~/.local/bin/24_bit_color: local/bin/24_bit_color
     ~/.local/bin/rubocop-daemon-wrapper: local/bin/rubocop-daemon-wrapper
@@ -17,7 +24,6 @@
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
     ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vimrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
