@@ -17,6 +17,7 @@
   cpa = cherry-pick --abort
   cpc = cherry-pick --continue
   rc = rebase --continue
+  recentb = "!r() { count=$1; git for-each-ref --sort=-committerdate refs/heads --format='%(color:yellow)%(refname:short) %(color:bold green)%(committerdate:relative) %(color:blue)%(subject) %(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:-20} | column -ts' '; }; r"
 [log]
   decorate = true
 [include]
