@@ -21,6 +21,7 @@ local languages = {
   scss = {formatter},
   css = {formatter},
   markdown = {formatter},
+  ruby = {formatter},
 }
 
 local efm_config = os.getenv('HOME') ..
