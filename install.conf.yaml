@@ -7,6 +7,7 @@
 - create:
     - ~/.config/efm-langserver
     - ~/.config/fish
+    - ~/.config/fish/functions
     - ~/.config/git
     - ~/.local/bin
     - ~/.nvim/undodir
@@ -15,6 +16,7 @@
     ~/.config/efm-langserver/config.yaml:  config/efm-langserver/config.yaml
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/fish/fish_plugins: config/fish/fish_plugins
+    ~/.config/fish/functions/refresh_tmux_vars.fish: config/fish/functions/refresh_tmux_vars.fish
     ~/.config/git/config: config/git/config
     ~/.config/git/ignore_global: config/git/ignore_global
     ~/.config/nvim: config/nvim
