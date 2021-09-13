@@ -20,8 +20,6 @@
     ~/.config/nvim: config/nvim
     ~/.local/bin/24_bit_color: local/bin/24_bit_color
     ~/.local/bin/rubocop-daemon-wrapper: local/bin/rubocop-daemon-wrapper
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
     ~/.tmux.conf: tmux.conf
 
