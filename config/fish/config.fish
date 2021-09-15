@@ -22,6 +22,7 @@ else
 end
 
 set fish_greeting
+fzf_configure_bindings --git_status=\cs --git_log=\ch --directory=\cf
 
 set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type f"
