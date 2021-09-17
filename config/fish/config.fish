@@ -8,6 +8,7 @@ abbr -a -U -- gaa git commit -a --amend
 abbr -a -U -- gcm "git checkout (git_main_branch)"
 abbr -a -U -- cr "git checkout (git recentb | _fzf_wrapper --ansi | cut -d ' ' -f1)"
 abbr -a -U -- gp git push -u origin HEAD
+abbr -a -U -- grim "git rebase -i (git_origin_main_branch)"
 abbr -a -U -- grm "git rebase (git_origin_main_branch)"
 abbr -a -U -- rc bin/rails console
 abbr -a -U -- rs bin/rails server
