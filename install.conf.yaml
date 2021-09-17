@@ -17,6 +17,7 @@
     ~/.config/fish/config.fish: config/fish/config.fish
     ~/.config/fish/fish_plugins: config/fish/fish_plugins
     ~/.config/fish/functions/refresh_tmux_vars.fish: config/fish/functions/refresh_tmux_vars.fish
+    ~/.config/fish/functions/git_main.fish: config/fish/functions/git_main.fish
     ~/.config/git/config: config/git/config
     ~/.config/git/ignore_global: config/git/ignore_global
     ~/.config/nvim: config/nvim
