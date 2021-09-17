@@ -1,6 +1,14 @@
 vim.cmd [[packadd packer.nvim]]
 
+local presentImpatient, impatient = pcall(require, 'impatient')
+
+if presentImpatient then
+  impatient.enable_profile()
+end
+
 return require('packer').startup(function(use)
+  use 'lewis6991/impatient.nvim'
+
   -- Packer can manage itself as an optional plugin
   use {
     'wbthomason/packer.nvim',
