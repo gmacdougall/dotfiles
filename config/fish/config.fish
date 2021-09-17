@@ -4,7 +4,8 @@ fish_vi_key_bindings
 abbr -a -U -- dc docker-compose
 abbr -a -U -- ds devspace
 abbr -a -U -- g git
-abbr -a -U -- cr "git checkout (git recentb | fzf --ansi | cut -d ' ' -f1)"
+abbr -a -U -- gaa git commit -a --amend
+abbr -a -U -- cr "git checkout (git recentb | _fzf_wrapper --ansi | cut -d ' ' -f1)"
 abbr -a -U -- gp git push -u origin HEAD
 abbr -a -U -- rc bin/rails console
 abbr -a -U -- rs bin/rails server
