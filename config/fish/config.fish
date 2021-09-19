@@ -37,3 +37,15 @@ fish_add_path $HOME/.deno/bin
 fish_add_path $HOME/.local/bin
 
 alias vf="vim -c ':Telescope find_files'"
+
+function git_main_branch
+  if test $GIT_MAIN_BRANCH_NAME
+    echo $GIT_MAIN_BRANCH_NAME
+  else
+    git branch | cut -c 3- | grep -E '^development$|^main$|^master$' | head -n 1
+  end
+end
+
+function git_origin_main_branch
+  echo "origin/"(git_main_branch)
+end
