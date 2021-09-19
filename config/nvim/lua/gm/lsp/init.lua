@@ -60,6 +60,9 @@ local on_attach = function(client, bufnr)
     'lsp_diagnostics',
     'Show further detail of the error on the current line'
   )
+
+  -- format on save
+  vim.api.nvim_command[[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 end
 
 local default_lsp_config = {
