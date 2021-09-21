@@ -83,6 +83,7 @@ local servers = {
   sumneko_lua = {
     cmd = { 'lua-language-server' },
   },
+  tailwindcss = require('gm.lsp.servers.tailwindcss'),
   tsserver = require('gm.lsp.servers.tsserver')(on_attach),
 }
 
