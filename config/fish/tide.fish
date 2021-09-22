@@ -64,10 +64,10 @@ set -U tide_pwd_color_truncated_dirs BCBCBC
 set -U tide_pwd_icon 
 set -U tide_pwd_icon_home 
 set -U tide_pwd_icon_unwritable 
-set -U tide_pwd_markers '.git' 'package.json' 'Gemfile'
+set -U tide_pwd_markers '.git'
 
 set -U tide_right_prompt_frame_enabled false
-set -U tide_right_prompt_items status cmd_duration context jobs node chruby
+set -U tide_right_prompt_items status cmd_duration context node chruby os
 set -U tide_right_prompt_prefix 
 set -U tide_right_prompt_separator_diff_color
 set -U tide_right_prompt_separator_same_color 
@@ -90,6 +90,6 @@ set -U tide_vi_mode_bg_color_visual 000080
 set -U tide_vi_mode_color_default 000000
 set -U tide_vi_mode_color_replace 000000
 set -U tide_vi_mode_color_visual 000000
-set -U tide_vi_mode_icon_default ' ' 
-set -U tide_vi_mode_icon_replace R
-set -U tide_vi_mode_icon_visual V
+set -U tide_vi_mode_icon_default DEFAULT
+set -U tide_vi_mode_icon_replace REPLACE
+set -U tide_vi_mode_icon_visual VISUAL
