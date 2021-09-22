@@ -39,16 +39,6 @@ fish_add_path $HOME/.local/bin
 alias vf="vim -c ':Telescope find_files'"
 alias checkout_recent_branches="git checkout (git recentb | fzf --ansi --cycle --layout=reverse --border --height=85% --preview=\"git log -10 --stat --color (echo {} | cut -d ' ' -f1)\" | cut -d ' ' -f1)"
 
-# Only run on host systems, not on VM's
-if [ (whoami) = "gregor" ]
-  if test -n $SSH_AGENT_PID
-    eval (ssh-agent -c)
-    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-  end
-end
-
 function git_main_branch
   if test $GIT_MAIN_BRANCH_NAME
     echo $GIT_MAIN_BRANCH_NAME
