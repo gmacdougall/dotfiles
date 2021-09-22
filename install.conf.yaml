@@ -15,6 +15,7 @@
 - link:
     ~/.config/efm-langserver/config.yaml:  config/efm-langserver/config.yaml
     ~/.config/fish/config.fish: config/fish/config.fish
+    ~/.config/fish/tide.fish: config/fish/tide.fish
     ~/.config/fish/fish_plugins: config/fish/fish_plugins
     ~/.config/fish/functions/refresh_tmux_vars.fish: config/fish/functions/refresh_tmux_vars.fish
     ~/.config/git/config: config/git/config

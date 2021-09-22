@@ -1,4 +1,5 @@
 fish_vi_key_bindings
+source ~/.config/fish/tide.fish
 
 abbr -a -U -- dc docker-compose
 abbr -a -U -- ds devspace
