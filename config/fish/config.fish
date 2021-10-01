@@ -7,7 +7,7 @@ abbr -a -U -- g git
 abbr -a -U -- gaa git commit -a --amend
 abbr -a -U -- gcm "git checkout (git_main_branch)"
 abbr -a -U -- cr checkout_recent_branches
-abbr -a -U -- gp git push -u origin HEAD
+abbr -a -U -- gpu git push -u origin HEAD
 abbr -a -U -- grim "git rebase -i (git_origin_main_branch)"
 abbr -a -U -- grm "git rebase (git_origin_main_branch)"
 abbr -a -U -- rc bin/rails console
@@ -37,7 +37,7 @@ fish_add_path $HOME/.deno/bin
 fish_add_path $HOME/.local/bin
 
 alias vf="vim -c ':Telescope find_files'"
-alias checkout_recent_branches="git checkout (git recentb | fzf --ansi --cycle --layout=reverse --border --height=85% --preview=\"git log -10 --stat --color (echo {} | cut -d ' ' -f1)\" | cut -d ' ' -f1)"
+alias checkout_recent_branches="git checkout (git recentb | fzf --ansi --cycle --layout=reverse --border --height=85% --preview-window=right,80 --preview=\"git log -10 --stat --color (echo {} | cut -d ' ' -f1)\" | cut -d ' ' -f1)"
 
 function git_main_branch
   if test $GIT_MAIN_BRANCH_NAME
