@@ -12,7 +12,7 @@
   cpa = cherry-pick --abort
   cpc = cherry-pick --continue
   rc = rebase --continue
-  recentb = "!r() { git for-each-ref --sort=-committerdate refs/heads --format='%(color:yellow)%(refname:short) %(color:bold green)%(committerdate:relative) %(color:magenta)%(authorname)%(color:reset) %(color:blue)%(subject)' --color=always --count=50 | column -ts' '; }; r"
+  recentbranches = "!r() { git for-each-ref --sort=-committerdate refs/heads --format='%(color:yellow)%(refname:short) %(color:bold green)%(committerdate:relative) %(color:magenta)%(authorname)%(color:reset) %(color:blue)%(subject)' --color=always --count=50 | column -ts' '; }; r"
 [log]
   decorate = true
 [push]
@@ -38,7 +38,7 @@
   show = delta
 [delta]
   features = tangara-chilensis
-  side-by-side = true
+  side-by-side = false
   minus-style = normal "#390000"
 [interactive]
   diffFilter = delta --color-only
