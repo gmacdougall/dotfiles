@@ -1,5 +1,8 @@
 session_name: g-sup
 start_directory: ~/dev/gusto-support
+shell_command_before:
+  - cd ~/dev/gusto-support
+  - nvm use
 windows:
   - window_name: code
     panes:
