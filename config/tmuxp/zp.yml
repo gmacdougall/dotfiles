@@ -1,0 +1,15 @@
+session_name: zp
+start_directory: ~/dev/zenpayroll
+windows:
+  - window_name: code
+    panes:
+    -
+  - window_name: ds
+    panes:
+    - shell_command: devspace use space gregor-macdougall && devspace dev
+  - window_name: rc c
+    panes:
+    - shell_command: rc
+  - window_name: test
+    panes:
+    -
