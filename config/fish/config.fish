@@ -4,6 +4,7 @@ source ~/.config/fish/tide.fish
 abbr -a -U -- dc docker-compose
 abbr -a -U -- ds devspace
 abbr -a -U -- g git
+abbr -a -U -- grh git reset --hard
 abbr -a -U -- glo git log --oneline --graph -20
 abbr -a -U -- gcaa git commit -a --amend
 abbr -a -U -- gcm "git checkout (git_main_branch)"
@@ -14,10 +15,7 @@ abbr -a -U -- grim "git rebase -i (git_origin_main_branch)"
 abbr -a -U -- grm "git rebase (git_origin_main_branch)"
 abbr -a -U -- rc bin/rails console
 abbr -a -U -- rs bin/rails server
-abbr -a -U -- v vagrant
-abbr -a -U -- vp vagrant provision
-abbr -a -U -- vs vagrant ssh
-abbr -a -U -- vu vagrant up
+abbr -a -U -- v vim
 abbr -a -U -- y yarn
 
 # I install packages at different places in arch
@@ -45,7 +43,7 @@ function git_main_branch
   if test $GIT_MAIN_BRANCH_NAME
     echo $GIT_MAIN_BRANCH_NAME
   else
-    git branch | cut -c 3- | grep -E '^development$|^main$|^master$' | head -n 1
+    git branch | cut -c 3- | grep -E '^develop$|^development$|^main$|^master$' | head -n 1
   end
 end
 
