@@ -9,7 +9,7 @@ windows:
     -
   - window_name: rails s
     panes:
-    - shell_command: rs
+    - shell_command: rs -p 7190
   - window_name: rails c
     panes:
     - shell_command: rc
