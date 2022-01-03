@@ -42,3 +42,5 @@
   minus-style = normal "#390000"
 [interactive]
   diffFilter = delta --color-only
+[commit]
+  verbose = true
