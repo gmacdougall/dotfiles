@@ -26,15 +26,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
 
   use {
-    "lazytanuki/nvim-mapper",
-    config = function()
-      require("nvim-mapper").setup{}
-      require("gm.plugins.nvim-mapper")
-    end,
-    before = "telescope.nvim"
-  }
-
-  use {
     'nvim-telescope/telescope.nvim',
     requires = {
       {'nvim-lua/popup.nvim'},
@@ -68,7 +59,12 @@ return require('packer').startup(function(use)
     requires = "lazytanuki/nvim-mapper",
     config = function() require('gm.lsp') end,
   }
-  use 'kabouzeid/nvim-lspinstall'
+  use("jose-elias-alvarez/nvim-lsp-ts-utils")
+  use("williamboman/nvim-lsp-installer")
+  use({
+    "creativenull/efmls-configs-nvim",
+    requires = { "neovim/nvim-lspconfig" },
+  })
 
   use {
     "folke/trouble.nvim",
