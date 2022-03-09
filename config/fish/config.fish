@@ -1,6 +1,8 @@
 fish_vi_key_bindings
 source ~/.config/fish/tide.fish
 
+abbr -a -U -- dbm bin/rails db:migrate
+abbr -a -U -- dbsd bin/rails db:schema:dump
 abbr -a -U -- dc docker-compose
 abbr -a -U -- dep "bundle && yarn && bin/rails db:migrate"
 abbr -a -U -- ds devspace
