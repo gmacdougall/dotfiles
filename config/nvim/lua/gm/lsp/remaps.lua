@@ -115,7 +115,7 @@ function M.set_default_on_buffer(client, bufnr)
 
 	buf_set_keymap(
 		"n",
-		"<leader>fe",
+		"<leader>td",
 		"<cmd>Trouble document_diagnostics<cr>",
 		"lsp_show_diagnostics",
 		"Show diagnostics"
@@ -123,7 +123,7 @@ function M.set_default_on_buffer(client, bufnr)
 
 	buf_set_keymap(
 		"n",
-		"<leader>fE",
+		"<leader>d",
 		"<cmd>lua vim.diagnostic.open_float()<CR>",
 		"lsp_show_line_diagnostics",
 		"Show line diagnostics"
