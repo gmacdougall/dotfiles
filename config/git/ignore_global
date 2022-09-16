@@ -5,3 +5,4 @@
 .vimrc
 .solargraph.yml
 **/vendor/bundle/*
+.rgignore
