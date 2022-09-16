@@ -7,6 +7,7 @@ abbr -a -U -- dc docker-compose
 abbr -a -U -- dep "bundle && yarn && bin/rails db:migrate"
 abbr -a -U -- ds devspace
 abbr -a -U -- g git
+abbr -a -U -- gap git add -p
 abbr -a -U -- grh git reset --hard
 abbr -a -U -- glo git log --oneline --graph -20
 abbr -a -U -- gcaa git commit -a --amend
