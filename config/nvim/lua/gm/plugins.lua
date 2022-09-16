@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
       require('gm.plugins.telescope')
     end
   }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   use {
     'romgrk/barbar.nvim',
@@ -100,6 +101,6 @@ return require('packer').startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function() require('lualine').setup() end,
+    config = function() require('lualine').setup({}) end,
   }
 end)
