@@ -54,7 +54,7 @@ function git_main_branch
   if test $GIT_MAIN_BRANCH_NAME
     echo $GIT_MAIN_BRANCH_NAME
   else
-    git branch | cut -c 3- | grep -E '^develop$|^development$|^main$|^master$' | head -n 1
+    git branch | cut -c 3- | grep -E '^main$|^master$' | head -n 1
   end
 end
 
