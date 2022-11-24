@@ -31,6 +31,10 @@ local function on_attach(client, bufnr)
 	if presentLspSignature then
 		lspSignature.on_attach({ floating_window = false, timer_interval = 500 })
 	end
+
+  if vim.env.LSP_FORMAT_ON_SAVE then
+    vim.api.nvim_command[[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+  end
 end
 
 local signs = {
@@ -86,15 +90,19 @@ if presentCmpNvimLsp then
 end
 
 local servers = {
-  -- denols = require('gm.lsp.servers.deno'),
   efm = require('gm.lsp.servers.efm'),
-	eslint = {},
+  eslint = {},
   solargraph = require('gm.lsp.servers.solargraph'),
   sorbet = require('gm.lsp.servers.sorbet'),
   sumneko_lua = require('gm.lsp.servers.sumneko_lua'),
   tailwindcss = require('gm.lsp.servers.tailwindcss'),
-  tsserver = require('gm.lsp.servers.tsserver')(on_attach),
 }
+
+if vim.env.LSP_DENO then
+  servers['denols'] = require('gm.lsp.servers.deno')
+else
+  servers['tsserver'] = require('gm.lsp.servers.tsserver')(on_attach)
+end
 
 local default_lsp_config = {
 	on_attach = on_attach,
