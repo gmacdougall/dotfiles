@@ -8,7 +8,7 @@ return function(on_attach)
       on_attach(client, bufnr)
 
       -- formatting is delegated to prettier
-      client.resolved_capabilities.document_formatting = false
+      client.server_capabilities.document_formatting = false
     end,
     root_dir = lsp.util.root_pattern("tsconfig.json"),
   }
