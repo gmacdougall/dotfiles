@@ -31,6 +31,8 @@ abbr -a -U -- y yarn
 # I install packages at different places in arch
 if test -e /usr/bin/pacman
   set -U CHRUBY_ROOT /usr
+else if test -e /opt/homebrew/bin/brew
+  set -U CHRUBY_ROOT /opt/homebrew/opt/chruby
 else
   set -U CHRUBY_ROOT $HOME/.local
 end
