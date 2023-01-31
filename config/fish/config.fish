@@ -49,6 +49,7 @@ fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.deno/bin
 fish_add_path $HOME/.local/bin
 
+alias vim="nvim"
 alias vf="vim -c ':Telescope find_files'"
 alias checkout_recent_branches="git checkout (git recentbranches | fzf --ansi --cycle --layout=reverse --border --height=85% --preview-window=right,80 --preview=\"git log -10 --stat --color (echo {} | cut -d ' ' -f1)\" | cut -d ' ' -f1)"
 alias review="gh pr checkout (gh pr list -S 'review-requested:@me' | cat | column -t -s \t | fzf | cut -d' ' -f1)"
