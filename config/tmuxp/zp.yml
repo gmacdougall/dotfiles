@@ -6,10 +6,16 @@ windows:
     -
   - window_name: ds
     panes:
-    -
+    - shell_command: rs
   - window_name: rc c
     panes:
     - shell_command: rc
   - window_name: test
     panes:
     -
+  - window_name: vite
+    panes:
+    - shell_command: nvm use && bin/vite dev
+  - window_name: gql
+    panes:
+    - shell_command: nvm use && script/graphql_gateway_startup.sh
