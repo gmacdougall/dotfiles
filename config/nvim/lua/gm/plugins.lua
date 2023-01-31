@@ -56,12 +56,26 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {
-    'neovim/nvim-lspconfig',
-    requires = "lazytanuki/nvim-mapper",
-    config = function() require('gm.lsp') end,
+    "neovim/nvim-lspconfig",
+    requires = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "lazytanuki/nvim-mapper",
+    },
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+				ensure_installed = {
+          "efm",
+          "sorbet",
+          "tailwindcss",
+        }
+			})
+      require('gm.lsp')
+    end,
   }
+
   use("jose-elias-alvarez/nvim-lsp-ts-utils")
-  use("williamboman/nvim-lsp-installer")
   use({
     "creativenull/efmls-configs-nvim",
     requires = { "neovim/nvim-lspconfig" },
@@ -78,7 +92,6 @@ return require('packer').startup(function(use)
   -- Language packs
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = function() vim.cmd [[TSUpdate]] end,
     config = function() require('gm.plugins.treesitter') end
   }
 
