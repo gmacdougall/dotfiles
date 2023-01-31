@@ -6,3 +6,4 @@
 .solargraph.yml
 **/vendor/bundle/*
 .rgignore
+public/stats.html
