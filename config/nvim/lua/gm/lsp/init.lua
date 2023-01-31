@@ -1,40 +1,29 @@
-local present, _ = pcall(require, "lspconfig")
-if not present then
-	return
-end
-
-local present_lsp_installer, lsp_installer = pcall(require, "nvim-lsp-installer.servers")
-if not present_lsp_installer then
-	return
-end
+local lspconfig = require("lspconfig")
 
 local remaps = require("gm.lsp.remaps")
 
-local presentLspStatus, lspStatus = pcall(require, "lsp-status")
-local presentCmpNvimLsp, cmpNvimLsp = pcall(require, "cmp_nvim_lsp")
-local presentAerial, aerial = pcall(require, "aerial")
-local presentLspSignature, lspSignature = pcall(require, "lsp_signature")
+local presentLspStatus, lsp_status = pcall(require, "lsp-status")
+local presentCmpNvimLsp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+local presentLspSignature, lsp_signature = pcall(require, "lsp_signature")
 
 vim.lsp.set_log_level("error") -- 'trace', 'debug', 'info', 'warn', 'error'
 
 local function on_attach(client, bufnr)
-  remaps.set_default_on_buffer(client, bufnr)
+	remaps.set_default_on_buffer(client, bufnr)
 
 	if presentLspStatus then
-		lspStatus.on_attach(client, bufnr)
-	end
-
-	if presentAerial then
-		aerial.on_attach(client, bufnr)
+		lsp_status.on_attach(client)
 	end
 
 	if presentLspSignature then
-		lspSignature.on_attach({ floating_window = false, timer_interval = 500 })
+		lsp_signature.on_attach({ floating_window = false, timer_interval = 500 })
 	end
 
-  if vim.env.LSP_FORMAT_ON_SAVE then
-    vim.api.nvim_command[[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
-  end
+	if client.name == "tsserver" then
+		-- let prettier format
+		client.server_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
+	end
 end
 
 local signs = {
@@ -50,6 +39,8 @@ end
 
 local config = {
 	virtual_text = true,
+	-- enables lsp_lines but we want to start disabled
+	virtual_lines = false,
 	-- show signs
 	signs = {
 		active = signs,
@@ -78,15 +69,17 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 	border = "rounded",
 })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-if presentLspStatus then
-	lspStatus.register_progress()
-	capabilities = vim.tbl_extend("keep", capabilities, lspStatus.capabilities)
-end
+local capabilities
 
 if presentCmpNvimLsp then
-	capabilities = vim.tbl_extend("keep", capabilities, cmpNvimLsp.update_capabilities(capabilities))
+	capabilities = cmp_lsp.default_capabilities()
+else
+	capabilities = vim.lsp.protocol.make_client_capabilities()
+end
+
+if presentLspStatus then
+	lsp_status.register_progress()
+	capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
 end
 
 local servers = {
@@ -113,29 +106,40 @@ local default_lsp_config = {
 	},
 }
 
+local server_names = {}
+for server_name, _ in pairs(servers) do
+	table.insert(server_names, server_name)
+end
+--[[ setupped by typescript package so we need to ensure installed by mason ]]
+table.insert(server_names, "tsserver")
+
+local present_mason, mason = pcall(require, "mason-lspconfig")
+if present_mason then
+	mason.setup({ ensure_installed = server_names })
+end
+
+local present_typescript, typescript = pcall(require, "typescript")
+
+if present_typescript then
+	typescript.setup({
+		server = {
+			on_attach = function(client, bufnr)
+				on_attach(client, bufnr)
+			end,
+		},
+	})
+end
+
 for server_name, server_config in pairs(servers) do
-	local server_installed, server = lsp_installer.get_server(server_name)
-	if server_installed then
-		server:on_ready(function()
-			local merged_config = vim.tbl_deep_extend("force", default_lsp_config, server_config)
+	local merged_config = vim.tbl_deep_extend("force", default_lsp_config, server_config)
 
-			if server.name == "rust_analyzer" then
-				local default_server_lsp_config = server:get_default_options()
-				merged_config = vim.tbl_deep_extend("force", default_server_lsp_config, merged_config)
+	lspconfig[server_name].setup(merged_config)
 
-				local present_rust_tools, _ = pcall(require, "rust-tools")
+	if server_name == "rust_analyzer" then
+		local present_rust_tools, rust_tools = pcall(require, "rust-tools")
 
-				if present_rust_tools then
-					server:attach_buffers()
-				else
-					server:setup(merged_config)
-				end
-			else
-				server:setup(merged_config)
-			end
-		end)
-		if not server:is_installed() then
-			server:install()
+		if present_rust_tools then
+			rust_tools.setup({ server = merged_config })
 		end
 	end
 end
