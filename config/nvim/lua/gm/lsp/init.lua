@@ -83,7 +83,6 @@ if presentLspStatus then
 end
 
 local servers = {
-  efm = require('gm.lsp.servers.efm'),
   eslint = {},
   solargraph = require('gm.lsp.servers.solargraph'),
   sorbet = require('gm.lsp.servers.sorbet'),
@@ -95,6 +94,7 @@ if vim.env.LSP_DENO then
   servers['denols'] = require('gm.lsp.servers.deno')
 else
   servers['tsserver'] = require('gm.lsp.servers.tsserver')(on_attach)
+  servers['efm'] = require('gm.lsp.servers.efm')
 end
 
 local default_lsp_config = {
