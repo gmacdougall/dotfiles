@@ -168,10 +168,20 @@ return {
 
     if vim.env.LSP_DENO then
       servers['denols'] = require('gm.plugins.lsp.servers.deno')
+      if present_typescript then
+        typescript.setup({
+          server = {
+            on_attach = function(client, bufnr)
+              on_attach(client, bufnr)
+            end,
+            root_dir = lspconfig.util.root_pattern("tsconfig.json"),
+            single_file_support = false,
+          },
+        })
+      end
     else
       servers['eslint'] = {}
       if present_typescript then
-        -- servers['tsserver'] = require('gm.lsp.servers.tsserver')(on_attach)
         typescript.setup({
           server = {
             on_attach = function(client, bufnr)

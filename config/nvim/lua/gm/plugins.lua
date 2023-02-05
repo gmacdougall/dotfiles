@@ -23,7 +23,13 @@ return {
   -- Fuzzy Finding
   require("gm.plugins.telescope"),
 
+  -- Testing
+  require("gm.plugins.neotest"),
+
   -- Status Bars
   require("gm.plugins.bufferline"),
   require("gm.plugins.feline"),
+
+  -- Performance
+  require("gm.plugins.startup-time"),
 }
