@@ -1,8 +1,7 @@
+require 'gm.defaults'
+require 'gm.lazy'
 require 'gm.plugins'
 
-require 'gm.utils'
-require 'gm.defaults'
+-- require 'gm.utils'
 
-require 'gm.theme'
-
-vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+-- require 'gm.theme'
