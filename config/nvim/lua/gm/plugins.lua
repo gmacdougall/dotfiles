@@ -20,6 +20,9 @@ return {
   -- Code Folding
   require("gm.plugins.ufo"),
 
+  -- Quickfix
+  require("gm.plugins.bqf"),
+
   -- Fuzzy Finding
   require("gm.plugins.telescope"),
 
