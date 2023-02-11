@@ -16,6 +16,7 @@ return {
   -- LSP
   require('gm.plugins.mason'),
   require('gm.plugins.lsp'),
+  require('gm.plugins.trouble'),
 
   -- Code Folding
   require("gm.plugins.ufo"),

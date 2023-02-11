@@ -1,14 +1,7 @@
 return {
   "akinsho/bufferline.nvim",
-  config = function()
+  init = function()
     local r = require("gm.utils.remaps")
-    local bufferline = require("bufferline")
-
-    bufferline.setup({
-      options = {
-        diagnostics = "nvim_lsp",
-      },
-    })
 
     r.noremap("n", "<leader>1", "<cmd>BufferLineGoToBuffer 1<CR>", "Switch to Buffer 1")
     r.noremap("n", "<leader>2", "<cmd>BufferLineGoToBuffer 2<CR>", "Switch to Buffer 2")
@@ -22,6 +15,15 @@ return {
     r.noremap("n", "<leader>0", "<cmd>BufferLineGoToBuffer 10<CR>", "Switch to Buffer 10")
 
     r.noremap('n', '<C-c>', ':bd<CR>', 'Close the current buffer')
+  end,
+  config = function()
+    local bufferline = require("bufferline")
+
+    bufferline.setup({
+      options = {
+        diagnostics = "nvim_lsp",
+      },
+    })
   end,
   dependencies = {
     "nvim-tree/nvim-web-devicons",
