@@ -139,7 +139,6 @@ return {
       -- graphql = {},
       -- html = {},
       -- jsonls = require("gm.plugins.lsp.servers.jsonls")(capabilities),
-      sumneko_lua = require("gm.plugins.lsp.servers.sumneko_lua")(on_attach),
       -- yamlls = require("gm.plugins.lsp.servers.yamlls")(capabilities),
     }
 

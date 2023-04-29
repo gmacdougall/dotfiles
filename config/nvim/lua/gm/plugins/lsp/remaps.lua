@@ -89,8 +89,6 @@ function M.set_default_on_buffer(client, bufnr)
     end, "Buffer code actions")
   end
 
-  -- when sumneko lua will be able to format we can reput the capabilities
-  -- if cap.documentFormattingProvider then
   buf_set_keymap("n", "<leader>rf", function()
     vim.lsp.buf.format({
       async = true,
