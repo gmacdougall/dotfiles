@@ -12,7 +12,7 @@ return {
 
     treesitter.setup({
       ensure_installed = {
-	"fish",
+        "fish",
         "bash",
         "css",
         "dockerfile",
@@ -27,7 +27,7 @@ return {
         "scss",
         "tsx",
         "typescript",
-	"vim",
+        "vim",
         "yaml",
       },
       highlight = {
