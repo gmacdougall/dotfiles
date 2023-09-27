@@ -7,3 +7,4 @@
 **/vendor/bundle/*
 .rgignore
 public/stats.html
+config/initializers/gmacdougall.rb

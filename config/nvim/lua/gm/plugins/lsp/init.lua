@@ -140,6 +140,7 @@ return {
       -- graphql = {},
       -- html = {},
       -- jsonls = require("gm.plugins.lsp.servers.jsonls")(capabilities),
+      sorbet = {},
       -- yamlls = require("gm.plugins.lsp.servers.yamlls")(capabilities),
     }
 

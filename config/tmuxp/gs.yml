@@ -12,7 +12,7 @@ windows:
     - shell_command: rc
   - window_name: webpack
     panes:
-    - shell_command: bin/webpack-dev-server
+    - shell_command: yarn start
   - window_name: test
     panes:
     -
