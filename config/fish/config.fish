@@ -32,7 +32,7 @@ abbr -a -U -- y yarn
 if test -e /usr/bin/pacman
   set -U CHRUBY_ROOT /usr
 else if test -e /opt/homebrew/bin/brew
-  set -U CHRUBY_ROOT /opt/homebrew/opt/chruby
+  # rbenv on macos
 else
   set -U CHRUBY_ROOT $HOME/.local
 end
