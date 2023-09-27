@@ -181,7 +181,7 @@ return {
         })
       end
     else
-      servers['eslint'] = {}
+      servers['eslint'] = require('gm.plugins.lsp.servers.eslint')
       if present_typescript then
         typescript.setup({
           server = {
