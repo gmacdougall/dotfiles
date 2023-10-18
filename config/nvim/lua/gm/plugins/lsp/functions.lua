@@ -15,7 +15,6 @@ M.lsp_install_servers = function()
 	installLanguageServer("denols")
 	installLanguageServer("eslint")
 	installLanguageServer("solargraph")
-	installLanguageServer("sorbet")
 	installLanguageServer("tailwindcss")
 	installLanguageServer("tsserver")
 end
