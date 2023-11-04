@@ -21,6 +21,7 @@ return {
     formatters_by_ft = {
       javascript = js_formatters,
       javascriptreact = js_formatters,
+      lua = { "stylua" },
       typescript = js_formatters,
       typescriptreact = js_formatters,
     },
