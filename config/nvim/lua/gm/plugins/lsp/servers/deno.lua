@@ -4,7 +4,6 @@ return {
   init_options = {
     enable = true,
     lint = true,
-    importMap = 'import_map.json',
   },
   root_dir = lsp.util.root_pattern("deno.json"),
 }
