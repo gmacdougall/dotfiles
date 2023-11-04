@@ -7,7 +7,6 @@ return {
     'b0o/schemastore.nvim',
     'williamboman/mason-lspconfig.nvim',
     require('gm.plugins.mason'),
-    require('gm.plugins.lsp_lines'),
     require('gm.plugins.aerial'),
   },
   config = function()
@@ -83,8 +82,6 @@ return {
 
     local config = {
       virtual_text = true,
-      -- enables lsp_lines but we want to start disabled
-      virtual_lines = false,
       -- show signs
       signs = {
         active = signs,
