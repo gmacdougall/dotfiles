@@ -1,31 +1,34 @@
-return {
-  'mhartington/formatter.nvim',
-  lazy = true,
-  cmd = {
-    "Format",
-    "FormatLock",
-    "FormatWrite",
-    "FormatWriteLock",
-  },
-  config = function()
-    local util = require("formatter.util")
-    local formatter = require("formatter")
-    local prettierd = {
-      function()
-        return {
-          exe = "prettierd",
-          args = {vim.api.nvim_buf_get_name(0)},
-          stdin = true
-        }
-      end
-    }
+local js_formatters = { { "prettierd", "prettier" } }
 
-    formatter.setup({
-      filetype = {
-        javascript = prettierd,
-        typescript = prettierd,
-        typescriptreact = prettierd,
-      },
-    })
+return {
+  "stevearc/conform.nvim",
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
+  keys = {
+    {
+      -- Customize or remove this keymap to your liking
+      "<leader>f",
+      function()
+        require("conform").format({ async = true, lsp_fallback = true })
+      end,
+      mode = "",
+      desc = "Format buffer",
+    },
+  },
+  -- Everything in opts will be passed to setup()
+  opts = {
+    -- Define your formatters
+    formatters_by_ft = {
+      javascript = js_formatters,
+      javascriptreact = js_formatters,
+      typescript = js_formatters,
+      typescriptreact = js_formatters,
+    },
+    -- Set up format-on-save
+    format_on_save = { timeout_ms = 500, lsp_fallback = true },
+  },
+  init = function()
+    -- If you want the formatexpr, here is the place to set it
+    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
   end,
 }

@@ -10,6 +10,9 @@ return {
   -- Startup screen
   require("gm.plugins.alpha"),
 
+  -- Keybindings
+  require("gm.plugins.legendary"),
+
   -- Treesitter
   require("gm.plugins.treesitter"),
 
