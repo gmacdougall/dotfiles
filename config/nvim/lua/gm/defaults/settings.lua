@@ -28,7 +28,7 @@ local options = {
   scrolloff = 6,
 
   -- live preview of substitutions
-  inccommand = "split",
+  inccommand = 'split',
   -- Give more space for displaying messages.
   cmdheight = 1,
 
@@ -43,10 +43,10 @@ local options = {
   -- menuone: popup even when there's only one match
   -- noinsert: Do not insert text until a selection is made
   -- noselect: Do not select, force user to select one from the menu
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
+  completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
 
   -- column & git column
-  signcolumn = "yes:2",
+  signcolumn = 'yes:2',
 
   cursorline = false,
   cursorcolumn = false,
@@ -56,7 +56,7 @@ local options = {
 
   -- show spaces
   list = true,
-  listchars = "tab:>·,trail:~,extends:>,precedes:<",
+  listchars = 'tab:>·,trail:~,extends:>,precedes:<',
 
   -- global statusline
   laststatus = 3,
@@ -66,7 +66,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-vim.opt.shortmess:append("c")
+vim.opt.shortmess:append('c')
 
 vim.g.loaded_matchparen = 1
-vim.g.mapleader = " "
+vim.g.mapleader = ' '

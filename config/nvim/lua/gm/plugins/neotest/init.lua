@@ -1,39 +1,39 @@
 return {
-  "nvim-neotest/neotest",
+  'nvim-neotest/neotest',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-    "haydenmeade/neotest-jest",
-    "olimorris/neotest-rspec",
+    'nvim-lua/plenary.nvim',
+    'nvim-treesitter/nvim-treesitter',
+    'haydenmeade/neotest-jest',
+    'olimorris/neotest-rspec',
   },
   init = function()
-    local r = require("gm.utils.remaps")
+    local r = require('gm.utils.remaps')
 
-    r.which_key("<leader>;", "test")
+    r.which_key('<leader>;', 'test')
 
-    r.noremap("n", "<leader>;f", function()
-      require("neotest").run.run()
-    end, "Run the nearest test")
+    r.noremap('n', '<leader>;f', function()
+      require('neotest').run.run()
+    end, 'Run the nearest test')
 
-    r.noremap("n", "<leader>;r", function()
-      require("neotest").run.run(vim.fn.expand("%"))
-    end, "Run tests the current file")
+    r.noremap('n', '<leader>;r', function()
+      require('neotest').run.run(vim.fn.expand('%'))
+    end, 'Run tests the current file')
 
-    r.noremap("n", "<leader>;d", function()
-      require("neotest").run.run({ strategy = "dap" })
-    end, "Debug the nearest test (requires nvim-dap and adapter support)")
+    r.noremap('n', '<leader>;d', function()
+      require('neotest').run.run({ strategy = 'dap' })
+    end, 'Debug the nearest test (requires nvim-dap and adapter support)')
 
-    r.noremap("n", "<leader>;s", function()
-      require("neotest").run.stop()
-    end, "Stop the nearest test")
+    r.noremap('n', '<leader>;s', function()
+      require('neotest').run.stop()
+    end, 'Stop the nearest test')
 
     --[[ require("neotest").run.attach() ]]
   end,
   config = function()
-    require("neotest").setup({
+    require('neotest').setup({
       adapters = {
-        require("neotest-jest")({
-          jestCommand = "jest --watch ",
+        require('neotest-jest')({
+          jestCommand = 'jest --watch ',
         }),
         require('neotest-rspec'),
       },

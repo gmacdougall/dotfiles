@@ -1,11 +1,11 @@
 return {
-  "rcarriga/nvim-notify",
+  'rcarriga/nvim-notify',
   config = function()
-    local notify = require("notify")
+    local notify = require('notify')
 
     notify.setup({
-      stages = "fade",
-      render = "minimal",
+      stages = 'fade',
+      render = 'minimal',
     })
 
     vim.notify = notify

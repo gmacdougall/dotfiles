@@ -1,4 +1,4 @@
-local presentNavic, navic = pcall(require, "nvim-navic")
+local presentNavic, navic = pcall(require, 'nvim-navic')
 
 local WINBAR = {}
 

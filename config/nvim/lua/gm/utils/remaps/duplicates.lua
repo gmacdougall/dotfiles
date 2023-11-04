@@ -1,4 +1,4 @@
-local functions = require("gm.utils.functions")
+local functions = require('gm.utils.functions')
 
 local M = {}
 
@@ -14,7 +14,7 @@ local function check_and_set_duplicates(input, description, check, table)
 
     if found ~= nil then
       if found ~= description then
-        print(input .. " already mapped (" .. found .. " so we cannot map (" .. description .. ")")
+        print(input .. ' already mapped (' .. found .. ' so we cannot map (' .. description .. ')')
       end
     end
 
@@ -30,35 +30,35 @@ M.check_duplicates = function(type, input, description)
   local check_x = false
 
   if functions.is_table(type) then
-    if type["n"] then
+    if type['n'] then
       check_n = true
     end
-    if type["v"] then
+    if type['v'] then
       check_v = true
     end
-    if type["i"] then
+    if type['i'] then
       check_i = true
     end
-    if type["s"] then
+    if type['s'] then
       check_s = true
     end
-    if type["x"] then
+    if type['x'] then
       check_x = true
     end
   else
-    if type == "n" then
+    if type == 'n' then
       check_n = true
     end
-    if type == "v" then
+    if type == 'v' then
       check_v = true
     end
-    if type == "i" then
+    if type == 'i' then
       check_i = true
     end
-    if type == "s" then
+    if type == 's' then
       check_s = true
     end
-    if type == "x" then
+    if type == 'x' then
       check_x = true
     end
   end

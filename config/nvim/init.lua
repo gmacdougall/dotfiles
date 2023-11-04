@@ -1,2 +1,2 @@
-require 'gm.defaults'
-require 'gm.lazy'
+require('gm.defaults')
+require('gm.lazy')

@@ -7,7 +7,7 @@ function M.starts_with(str, start)
 end
 
 function M.is_table(to_check)
-  return type(to_check) == "table"
+  return type(to_check) == 'table'
 end
 
 function M.has_key(t, key)
@@ -41,12 +41,12 @@ function M.tprint_keys(table)
 end
 
 M.reload = function()
-  local presentReload, reload = pcall(require, "plenary.reload")
+  local presentReload, reload = pcall(require, 'plenary.reload')
   if presentReload then
     local counter = 0
 
     for moduleName in pairs(package.loaded) do
-      if M.starts_with(moduleName, "lt.") then
+      if M.starts_with(moduleName, 'lt.') then
         reload.reload_module(moduleName)
 
         counter = counter + 1
@@ -56,12 +56,12 @@ M.reload = function()
     -- clear nvim-mapper keys
     vim.g.mapper_records = nil
 
-    vim.notify("Reloaded " .. counter .. " modules!")
+    vim.notify('Reloaded ' .. counter .. ' modules!')
   end
 end
 
 function M.is_macunix()
-  return vim.fn.has("macunix")
+  return vim.fn.has('macunix')
 end
 
 function M.link_highlight(from, to, override)
@@ -99,14 +99,14 @@ M.from_highlight = function(hl)
   local result = {}
   local list = vim.api.nvim_get_hl_by_name(hl, true)
   for k, v in pairs(list) do
-    local name = k == "background" and "bg" or "fg"
-    result[name] = string.format("#%06x", v)
+    local name = k == 'background' and 'bg' or 'fg'
+    result[name] = string.format('#%06x', v)
   end
   return result
 end
 
 M.get_color_from_terminal = function(num, default)
-  local key = "terminal_color_" .. num
+  local key = 'terminal_color_' .. num
   return vim.g[key] and vim.g[key] or default
 end
 

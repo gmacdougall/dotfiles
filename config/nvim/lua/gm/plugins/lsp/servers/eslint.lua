@@ -1,6 +1,6 @@
-local util = require 'lspconfig.util'
+local util = require('lspconfig.util')
 local root_file = {
-  '.git'
+  '.git',
 }
 
 return {

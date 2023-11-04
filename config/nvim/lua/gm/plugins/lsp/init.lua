@@ -1,44 +1,44 @@
 return {
-  "neovim/nvim-lspconfig",
+  'neovim/nvim-lspconfig',
   dependencies = {
-    "folke/neodev.nvim",
-    "nvim-lua/lsp-status.nvim",
-    "jose-elias-alvarez/typescript.nvim",
-    "b0o/schemastore.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    require("gm.plugins.mason"),
-    require("gm.plugins.lsp_lines"),
-    require("gm.plugins.aerial"),
+    'folke/neodev.nvim',
+    'nvim-lua/lsp-status.nvim',
+    'jose-elias-alvarez/typescript.nvim',
+    'b0o/schemastore.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    require('gm.plugins.mason'),
+    require('gm.plugins.lsp_lines'),
+    require('gm.plugins.aerial'),
   },
   config = function()
-    require("neodev").setup({})
+    require('neodev').setup({})
 
-    local lspconfig = require("lspconfig")
+    local lspconfig = require('lspconfig')
 
-    require("gm.plugins.lsp.null-ls")
-    local remaps = require("gm.plugins.lsp.remaps")
+    require('gm.plugins.lsp.null-ls')
+    local remaps = require('gm.plugins.lsp.remaps')
 
-    local presentLspStatus, lsp_status = pcall(require, "lsp-status")
-    local presentCmpNvimLsp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
-    local presentLspSignature, lsp_signature = pcall(require, "lsp_signature")
-    local presentNavic, navic = pcall(require, "nvim-navic")
-    local presentUfo = pcall(require, "ufo")
-    local ufo = require("gm.plugins.ufo.setup")
+    local presentLspStatus, lsp_status = pcall(require, 'lsp-status')
+    local presentCmpNvimLsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
+    local presentLspSignature, lsp_signature = pcall(require, 'lsp_signature')
+    local presentNavic, navic = pcall(require, 'nvim-navic')
+    local presentUfo = pcall(require, 'ufo')
+    local ufo = require('gm.plugins.ufo.setup')
 
-    vim.lsp.set_log_level("error") -- 'trace', 'debug', 'info', 'warn', 'error'
+    vim.lsp.set_log_level('error') -- 'trace', 'debug', 'info', 'warn', 'error'
 
     local function try_attach_navic(client, bufnr)
       if presentNavic then
-        local filetype = vim.api.nvim_buf_get_option(bufnr or 0, "filetype")
+        local filetype = vim.api.nvim_buf_get_option(bufnr or 0, 'filetype')
 
         if client.server_capabilities.documentSymbolProvider then
-          if client.name == "graphql" then
-            if filetype == "typescript" or filetype == "typescriptreact" or filetype == "javascript" then
+          if client.name == 'graphql' then
+            if filetype == 'typescript' or filetype == 'typescriptreact' or filetype == 'javascript' then
               return
             end
           end
 
-          if client.name == "eslint" or client.name == "angularls" or client.name == "null-ls" then
+          if client.name == 'eslint' or client.name == 'angularls' or client.name == 'null-ls' then
             return
           end
 
@@ -63,7 +63,7 @@ return {
 
       try_attach_navic(client, bufnr)
 
-      if client.name == "tsserver" then
+      if client.name == 'tsserver' then
         -- let prettier format
         client.server_capabilities.document_formatting = false
         client.server_capabilities.documentFormattingProvider = false
@@ -71,14 +71,14 @@ return {
     end
 
     local signs = {
-      { name = "DiagnosticSignError", text = "" },
-      { name = "DiagnosticSignWarn", text = "" },
-      { name = "DiagnosticSignHint", text = "" },
-      { name = "DiagnosticSignInfo", text = "" },
+      { name = 'DiagnosticSignError', text = '' },
+      { name = 'DiagnosticSignWarn', text = '' },
+      { name = 'DiagnosticSignHint', text = '' },
+      { name = 'DiagnosticSignInfo', text = '' },
     }
 
     for _, sign in ipairs(signs) do
-      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
     end
 
     local config = {
@@ -95,22 +95,22 @@ return {
       float = {
         focus = false,
         focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
+        style = 'minimal',
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
       },
     }
 
     vim.diagnostic.config(config)
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = "rounded",
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = 'rounded',
     })
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      border = "rounded",
+    vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      border = 'rounded',
     })
 
     local capabilities
@@ -123,7 +123,7 @@ return {
 
     if presentLspStatus then
       lsp_status.register_progress()
-      capabilities = vim.tbl_extend("keep", capabilities, lsp_status.capabilities)
+      capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
     end
 
     if presentUfo then
@@ -140,7 +140,7 @@ return {
       -- graphql = {},
       -- html = {},
       -- jsonls = require("gm.plugins.lsp.servers.jsonls")(capabilities),
-      sorbet = require("gm.plugins.lsp.servers.sorbet")(capabilities),
+      sorbet = require('gm.plugins.lsp.servers.sorbet')(capabilities),
       -- yamlls = require("gm.plugins.lsp.servers.yamlls")(capabilities),
     }
 
@@ -158,14 +158,14 @@ return {
       table.insert(server_names, server_name)
     end
     --[[ setupped by typescript package so we need to ensure installed by mason ]]
-    table.insert(server_names, "tsserver")
+    table.insert(server_names, 'tsserver')
 
-    local present_mason, mason = pcall(require, "mason-lspconfig")
+    local present_mason, mason = pcall(require, 'mason-lspconfig')
     if present_mason then
       mason.setup({ ensure_installed = server_names })
     end
 
-    local present_typescript, typescript = pcall(require, "typescript")
+    local present_typescript, typescript = pcall(require, 'typescript')
 
     if vim.env.LSP_DENO then
       servers['denols'] = require('gm.plugins.lsp.servers.deno')
@@ -175,7 +175,7 @@ return {
             on_attach = function(client, bufnr)
               on_attach(client, bufnr)
             end,
-            root_dir = lspconfig.util.root_pattern("tsconfig.json"),
+            root_dir = lspconfig.util.root_pattern('tsconfig.json'),
             single_file_support = false,
           },
         })
@@ -194,12 +194,12 @@ return {
     end
 
     for server_name, server_config in pairs(servers) do
-      local merged_config = vim.tbl_deep_extend("force", default_lsp_config, server_config)
+      local merged_config = vim.tbl_deep_extend('force', default_lsp_config, server_config)
 
       lspconfig[server_name].setup(merged_config)
 
-      if server_name == "rust_analyzer" then
-        local present_rust_tools, rust_tools = pcall(require, "rust-tools")
+      if server_name == 'rust_analyzer' then
+        local present_rust_tools, rust_tools = pcall(require, 'rust-tools')
 
         if present_rust_tools then
           rust_tools.setup({ server = merged_config })

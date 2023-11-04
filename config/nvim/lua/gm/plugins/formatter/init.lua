@@ -1,18 +1,18 @@
-local js_formatters = { { "prettierd", "prettier" } }
+local js_formatters = { { 'prettierd', 'prettier' } }
 
 return {
-  "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  cmd = { "ConformInfo" },
+  'stevearc/conform.nvim',
+  event = { 'BufWritePre' },
+  cmd = { 'ConformInfo' },
   keys = {
     {
       -- Customize or remove this keymap to your liking
-      "<leader>f",
+      '<leader>f',
       function()
-        require("conform").format({ async = true, lsp_fallback = true })
+        require('conform').format({ async = true, lsp_fallback = true })
       end,
-      mode = "",
-      desc = "Format buffer",
+      mode = '',
+      desc = 'Format buffer',
     },
   },
   -- Everything in opts will be passed to setup()
@@ -21,7 +21,7 @@ return {
     formatters_by_ft = {
       javascript = js_formatters,
       javascriptreact = js_formatters,
-      lua = { "stylua" },
+      lua = { 'stylua' },
       typescript = js_formatters,
       typescriptreact = js_formatters,
     },

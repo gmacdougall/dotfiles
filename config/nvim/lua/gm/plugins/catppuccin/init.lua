@@ -1,19 +1,19 @@
 return {
-  "catppuccin/nvim",
+  'catppuccin/nvim',
   config = function()
-    vim.cmd("syntax on")
+    vim.cmd('syntax on')
 
     vim.o.termguicolors = true
 
-    local catppuccin = require("catppuccin")
+    local catppuccin = require('catppuccin')
 
-    vim.cmd.colorscheme("catppuccin-mocha")
+    vim.cmd.colorscheme('catppuccin-mocha')
 
     catppuccin.setup({
-      flavour = "mocha",
+      flavour = 'mocha',
       background = {
-        light = "latte",
-        dark = "mocha",
+        light = 'latte',
+        dark = 'mocha',
       },
       integrations = {
         cmp = true,
@@ -29,14 +29,14 @@ return {
       },
     })
 
-    local palette = require("catppuccin.palettes").get_palette("mocha")
+    local palette = require('catppuccin.palettes').get_palette('mocha')
 
-    local highlight = require("gm.utils.functions").highlight
-    local highlight_bg = require("gm.utils.functions").highlight_bg
-    local get_color_from_terminal = require("gm.utils.functions").get_color_from_terminal
+    local highlight = require('gm.utils.functions').highlight
+    local highlight_bg = require('gm.utils.functions').highlight_bg
+    local get_color_from_terminal = require('gm.utils.functions').get_color_from_terminal
 
-    if pcall(require, "ufo") then
-      highlight_bg("UfoFoldedBg", palette.base)
+    if pcall(require, 'ufo') then
+      highlight_bg('UfoFoldedBg', palette.base)
     end
 
     local bg = palette.mantle
@@ -49,7 +49,7 @@ return {
     local orange = palette.orange
     local purple = palette.mauve
 
-    if pcall(require, "feline") then
+    if pcall(require, 'feline') then
       local feline_theme = {
         bg = bg_alt,
         alt = bg,

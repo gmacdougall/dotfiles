@@ -1,2 +1,2 @@
-require('gm.utils.functions');
-require('gm.utils.globals');
+require('gm.utils.functions')
+require('gm.utils.globals')
