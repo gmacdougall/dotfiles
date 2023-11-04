@@ -56,10 +56,6 @@ function M.set_default_on_buffer(client, bufnr)
   if cap.documentSymbolProvider then
     -- buf_set_keymap('n','<leader>to', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
     buf_set_keymap('n', '<leader>tO', telescope_builtin.lsp_document_symbols, 'Document symbols')
-
-    if pcall(require, 'aerial') then
-      buf_set_keymap('n', '<leader>to', '<cmd>AerialToggle!<CR>', '(Aerial) Document symbols')
-    end
   end
 
   buf_set_keymap('n', '<leader>ts', vim.lsp.buf.signature_help, 'Show signature')
