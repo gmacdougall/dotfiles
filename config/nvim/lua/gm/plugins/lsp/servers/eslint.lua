@@ -1,7 +1,4 @@
 local util = require('lspconfig.util')
-local root_file = {
-  '.git',
-}
 
 return {
   on_attach = function(client, bufnr)
@@ -12,7 +9,6 @@ return {
     format = { enable = true }, -- this will enable formatting
   },
   root_dir = function(fname)
-    root_file = util.insert_package_json(root_file, 'eslintConfig', fname)
-    return util.root_pattern(unpack(root_file))(fname)
+    return util.find_git_ancestor(fname)
   end,
 }
