@@ -2,6 +2,8 @@ return {
   'stevearc/aerial.nvim',
   cmd = {
     'AerialToggle',
+    'AerialPrev',
+    'AerialNext',
   },
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
@@ -9,9 +11,25 @@ return {
   },
   keys = {
     { '<leader>a', '<cmd>AerialToggle<CR>', desc = 'Aerial' },
-    { '{', '<cmd>AerialPrev<CR>', desc = 'Aerial previous item' },
-    { '{', '<cmd>AerialNext<CR>', desc = 'Aerial next item' },
   },
   lazy = true,
-  opts = {},
+  opts = {
+    on_attach = function(client, bufnr)
+      local legendary = require('legendary')
+      legendary.keymaps({
+        {
+          '{',
+          '<cmd>AerialPrev<CR>',
+          desc = 'Aerial previous item',
+          opts = { buffer = bufnr },
+        },
+        {
+          '}',
+          '<cmd>AerialNext<CR>',
+          desc = 'Aerial next item',
+          opts = { buffer = bufnr },
+        },
+      })
+    end,
+  },
 }
