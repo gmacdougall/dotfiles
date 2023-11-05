@@ -1,5 +1,35 @@
 return {
   'nvim-telescope/telescope.nvim',
+  keys = {
+    {
+      '<leader>e',
+      function()
+        if vim.env.BIG_REPO then
+          require('telescope.builtin').git_files()
+        else
+          require('telescope.builtin').find_files()
+        end
+      end,
+      desc = 'Find files',
+    },
+    {
+      '<leader>fg',
+      function()
+        require('telescope.builtin').live_grep()
+      end,
+      desc = 'Live grep',
+    },
+    {
+      '<leader>sc',
+      function()
+        require('telescope.builtin').find_files({
+          prompt_title = '< VimConfig >',
+          cwd = '$HOME/.config/nvim',
+        })
+      end,
+      desc = 'Search vim config',
+    },
+  },
   dependencies = {
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
@@ -7,35 +37,8 @@ return {
   },
   config = function()
     local telescope = require('telescope')
-
-    local functions = require('gm.utils.functions')
-
     telescope.setup({})
-
-    require('gm.plugins.telescope.remaps')
-
     telescope.load_extension('ui-select')
-
-    if functions.is_macunix() then
-      telescope.load_extension('fzf')
-    else
-      vim.notify('not using fzf')
-    end
-
-    if pcall(require, 'project_nvim') then
-      telescope.load_extension('projects')
-    end
-
-    if pcall(require, 'harpoon') then
-      telescope.load_extension('harpoon')
-    end
-
-    if pcall(require, 'dap') then
-      telescope.load_extension('dap')
-    end
-
-    if pcall(require, 'refactoring') then
-      telescope.load_extension('refactoring')
-    end
+    telescope.load_extension('fzf')
   end,
 }
