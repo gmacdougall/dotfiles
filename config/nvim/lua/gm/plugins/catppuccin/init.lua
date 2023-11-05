@@ -1,13 +1,8 @@
 return {
   'catppuccin/nvim',
+  name = 'catppuccin',
   config = function()
-    vim.cmd('syntax on')
-
-    vim.o.termguicolors = true
-
     local catppuccin = require('catppuccin')
-
-    vim.cmd.colorscheme('catppuccin-mocha')
 
     catppuccin.setup({
       flavour = 'mocha',
@@ -28,6 +23,7 @@ return {
         which_key = true,
       },
     })
+    vim.cmd.colorscheme('catppuccin-mocha')
 
     local palette = require('catppuccin.palettes').get_palette('mocha')
 
