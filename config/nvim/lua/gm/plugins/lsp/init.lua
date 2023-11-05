@@ -21,8 +21,6 @@ return {
     local presentCmpNvimLsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
     local presentLspSignature, lsp_signature = pcall(require, 'lsp_signature')
     local presentNavic, navic = pcall(require, 'nvim-navic')
-    local presentUfo = pcall(require, 'ufo')
-    local ufo = require('gm.plugins.ufo.setup')
 
     vim.lsp.set_log_level('error') -- 'trace', 'debug', 'info', 'warn', 'error'
 
@@ -206,7 +204,5 @@ return {
         end
       end
     end
-
-    ufo.setupWithFallback()
   end,
 }

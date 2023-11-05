@@ -31,10 +31,6 @@ return {
     local highlight_bg = require('gm.utils.functions').highlight_bg
     local get_color_from_terminal = require('gm.utils.functions').get_color_from_terminal
 
-    if pcall(require, 'ufo') then
-      highlight_bg('UfoFoldedBg', palette.base)
-    end
-
     local bg = palette.mantle
     local bg_alt = palette.base
     local red = palette.red

@@ -21,9 +21,6 @@ return {
   require('gm.plugins.lsp'),
   require('gm.plugins.trouble'),
 
-  -- Code Folding
-  require('gm.plugins.ufo'),
-
   -- Quickfix
   require('gm.plugins.bqf'),
 
