@@ -1,9 +1,14 @@
 return {
   'folke/trouble.nvim',
-  init = function()
-    local r = require('gm.utils.remaps')
-    r.noremap('n', '<leader>t', '<cmd>TroubleToggle<cr>', { silent = true })
-  end,
+  keys = {
+    {
+      '<leader>t',
+      function()
+        require('trouble').toggle()
+      end,
+      desc = 'Trouble window',
+    },
+  },
   config = function()
     local trouble = require('trouble')
 
