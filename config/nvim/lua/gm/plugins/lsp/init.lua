@@ -137,7 +137,6 @@ return {
       -- graphql = {},
       -- html = {},
       -- jsonls = require("gm.plugins.lsp.servers.jsonls")(capabilities),
-      sorbet = require('gm.plugins.lsp.servers.sorbet')(capabilities),
       -- yamlls = require("gm.plugins.lsp.servers.yamlls")(capabilities),
     }
 
@@ -160,6 +159,10 @@ return {
     local present_mason, mason = pcall(require, 'mason-lspconfig')
     if present_mason then
       mason.setup({ ensure_installed = server_names })
+    end
+
+    if vim.env.SORBET then
+      servers['sorbet'] = require('gm.plugins.lsp.servers.sorbet')(capabilities)
     end
 
     local present_typescript, typescript = pcall(require, 'typescript')
