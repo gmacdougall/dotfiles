@@ -5,7 +5,6 @@ return {
   -- Theme
   require('gm.plugins.catppuccin'),
   require('gm.plugins.notify'),
-  require('gm.plugins.icons'),
 
   -- Startup screen
   require('gm.plugins.alpha'),
