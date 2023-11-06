@@ -1,5 +1,4 @@
 local keymap = vim.keymap
-local check_duplicates = require('gm.utils.remaps.duplicates').check_duplicates
 
 local M = {}
 
@@ -41,7 +40,6 @@ function M.map(type, input, output, description, additional_options)
 
   keymap.set(type, input, output, options)
 
-  check_duplicates(type, input, description)
   try_add_to_which_key_by_input(input, description)
 end
 
@@ -55,7 +53,6 @@ function M.noremap(type, input, output, description, additional_options)
 end
 
 function M.map_virtual(input, description)
-  check_duplicates(type, input, description)
   try_add_to_which_key_by_input(input, description)
 end
 
