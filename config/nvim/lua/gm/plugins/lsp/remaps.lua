@@ -85,29 +85,6 @@ function M.set_default_on_buffer(client, bufnr)
     end, 'Buffer code actions')
   end
 
-  buf_set_keymap('n', '<leader>rf', function()
-    vim.lsp.buf.format({
-      async = true,
-      bufnr = bufnr,
-      filter = function(format_client)
-        if is_typescript then
-          if format_client.name == 'null-ls' then
-            vim.notify('format ' .. filetype .. ' with ' .. format_client.name)
-            return true
-          else
-            return false
-          end
-        end
-
-        vim.notify('format ' .. filetype .. ' with ' .. format_client.name)
-        return true
-      end,
-    })
-  end, 'Format')
-  -- elseif cap.documentRangeFormattingProvider then
-  -- buf_set_keymap("n", "<leader>tf", vim.lsp.buf.formatting, "lsp_range_format", "Format")
-  -- end
-
   r.which_key('<leader>ri', 'import')
 
   buf_set_keymap('n', '<leader>rio', function()
