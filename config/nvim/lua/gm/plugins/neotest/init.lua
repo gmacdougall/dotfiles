@@ -41,7 +41,7 @@ return {
     require('neotest').setup({
       adapters = {
         require('neotest-jest')({
-          jestCommand = 'jest --watch ',
+          jestCommand = 'nlx jest',
         }),
         require('neotest-rspec'),
       },

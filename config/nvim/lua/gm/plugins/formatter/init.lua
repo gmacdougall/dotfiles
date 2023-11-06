@@ -1,4 +1,7 @@
 local js_formatters = { { 'prettierd', 'prettier' } }
+if vim.env.LSP_DENO then
+  js_formatters = { 'deno_fmt' }
+end
 
 return {
   'stevearc/conform.nvim',
