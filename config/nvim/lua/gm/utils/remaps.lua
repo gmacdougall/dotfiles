@@ -52,10 +52,6 @@ function M.noremap(type, input, output, description, additional_options)
   M.map(type, input, output, description, options)
 end
 
-function M.map_virtual(input, description)
-  try_add_to_which_key_by_input(input, description)
-end
-
 function M.which_key(input, description)
   try_add_to_which_key_by_input(input, description)
 end
