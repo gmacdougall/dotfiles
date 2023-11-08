@@ -3,7 +3,7 @@ return {
   require('gm.plugins.filetype'),
 
   -- Theme
-  require('gm.plugins.catppuccin'),
+  require('gm.plugins.theme'),
   require('gm.plugins.notify'),
 
   -- Startup screen
@@ -32,7 +32,7 @@ return {
 
   -- Status Bars
   require('gm.plugins.bufferline'),
-  require('gm.plugins.feline'),
+  require('gm.plugins.lualine'),
 
   -- Performance
   require('gm.plugins.startup-time'),
