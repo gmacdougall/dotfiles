@@ -3,7 +3,7 @@ return {
   require('gm.plugins.filetype'),
 
   -- Theme
-  require('gm.plugins.theme'),
+  require('gm.plugins.tokyonight'),
   require('gm.plugins.notify'),
 
   -- Startup screen
@@ -17,7 +17,7 @@ return {
 
   -- LSP
   require('gm.plugins.mason'),
-  require('gm.plugins.formatter'),
+  require('gm.plugins.conform'),
   require('gm.plugins.lsp'),
   require('gm.plugins.trouble'),
 
