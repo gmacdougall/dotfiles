@@ -1,7 +1,7 @@
 jorgebucaran/fisher
 PatrickF1/fzf.fish
+oh-my-fish/plugin-chruby
+jorgebucaran/nvm.fish
 halostatue/fish-direnv
-IlanCosman/tide@v5
-fabioantunes/fish-nvm
-edc/bass
-rbenv/fish-rbenv
+danhper/fish-ssh-agent
+IlanCosman/tide@v6

@@ -1,32 +1,32 @@
 fish_vi_key_bindings
 source ~/.config/fish/tide.fish
 
-abbr -a -U -- dbm bin/rails db:migrate
-abbr -a -U -- dbsd bin/rails db:schema:dump
-abbr -a -U -- dc docker-compose
-abbr -a -U -- dep "bundle && yarn && bin/rails db:migrate"
-abbr -a -U -- ds devspace
-abbr -a -U -- g git
-abbr -a -U -- gap git add -p
-abbr -a -U -- grh git reset --hard
-abbr -a -U -- glo git log --oneline --graph -20
-abbr -a -U -- gcaa git commit -a --amend
-abbr -a -U -- gcaf git commit -a --fixup
-abbr -a -U -- gcf git commit --fixup
-abbr -a -U -- gcm "git checkout (git_main_branch)"
-abbr -a -U -- cr checkout_recent_branches
-abbr -a -U -- prc gh pr create
-abbr -a -U -- gpu git push -u origin HEAD
-abbr -a -U -- grim "git rebase -i (git_origin_main_branch)"
-abbr -a -U -- grc git rebase --continue
-abbr -a -U -- grm "git rebase (git_origin_main_branch)"
-abbr -a -U -- rc bin/rails console
-abbr -a -U -- rs bin/rails server
-abbr -a -U -- tgs tmuxp load gs
-abbr -a -U -- tpl tmuxp load
-abbr -a -U -- tzp tmuxp load zp
-abbr -a -U -- v vim
-abbr -a -U -- y yarn
+abbr -a -- dbm bin/rails db:migrate
+abbr -a -- dbsd bin/rails db:schema:dump
+abbr -a -- dc docker-compose
+abbr -a -- dep "bundle && yarn && bin/rails db:migrate"
+abbr -a -- ds devspace
+abbr -a -- g git
+abbr -a -- gap git add -p
+abbr -a -- grh git reset --hard
+abbr -a -- glo git log --oneline --graph -20
+abbr -a -- gcaa git commit -a --amend
+abbr -a -- gcaf git commit -a --fixup
+abbr -a -- gcf git commit --fixup
+abbr -a -- gcm "git checkout (git_main_branch)"
+abbr -a -- cr checkout_recent_branches
+abbr -a -- prc gh pr create
+abbr -a -- gpu git push -u origin HEAD
+abbr -a -- grim "git rebase -i (git_origin_main_branch)"
+abbr -a -- grc git rebase --continue
+abbr -a -- grm "git rebase (git_origin_main_branch)"
+abbr -a -- rc bin/rails console
+abbr -a -- rs bin/rails server
+abbr -a -- tgs tmuxp load gs
+abbr -a -- tpl tmuxp load
+abbr -a -- tzp tmuxp load zp
+abbr -a -- v vim
+abbr -a -- y yarn
 
 # I install packages at different places in arch
 if test -e /usr/bin/pacman

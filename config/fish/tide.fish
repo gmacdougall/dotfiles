@@ -6,10 +6,6 @@ set -U tide_character_vi_icon_default ❮
 set -U tide_character_vi_icon_replace ▶
 set -U tide_character_vi_icon_visual V
 
-set -U tide_chruby_bg_color 551209
-set -U tide_chruby_color ff9999
-set -U tide_chruby_icon 
-
 set -U tide_cmd_duration_bg_color C4A000
 set -U tide_cmd_duration_color 000000
 set -U tide_cmd_duration_decimals 0
@@ -34,6 +30,7 @@ set -U tide_git_color_stash eeff33
 set -U tide_git_color_untracked eeff33
 set -U tide_git_color_upstream eeff33
 set -U tide_git_icon 
+set -U tide_git_truncation_length 64
 
 set -U tide_go_bg_color 00ACD7
 set -U tide_go_color 000000
@@ -67,7 +64,7 @@ set -U tide_pwd_icon_unwritable 
 set -U tide_pwd_markers '.git'
 
 set -U tide_right_prompt_frame_enabled false
-set -U tide_right_prompt_items status cmd_duration context node chruby os
+set -U tide_right_prompt_items status cmd_duration context node ruby os
 set -U tide_right_prompt_prefix 
 set -U tide_right_prompt_separator_diff_color
 set -U tide_right_prompt_separator_same_color 
