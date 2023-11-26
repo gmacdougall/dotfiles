@@ -129,6 +129,9 @@ return {
     end
 
     local servers = {
+      rubocop = {},
+      -- ruby_ls = {},
+      -- bashls = {},
       -- bashls = {},
       -- cssls = {},
       -- dockerls = {},

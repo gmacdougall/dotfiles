@@ -13,6 +13,8 @@ return {
         'luacheck',
         'gitlint',
         'jsonlint',
+        'rubocop',
+        'ruby_ls',
       },
 
       auto_update = false,
