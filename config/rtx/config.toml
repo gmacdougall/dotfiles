@@ -1,0 +1,8 @@
+[tools]
+
+ruby = '3.2.2'
+node = 'lts'
+bat = 'latest'
+delta = 'latest'
+ripgrep = 'latest'
+neovim = '0.9.4'

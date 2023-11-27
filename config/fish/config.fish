@@ -66,6 +66,4 @@ function git_origin_main_branch
   echo "origin/"(git_main_branch)
 end
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+rtx activate fish | source
