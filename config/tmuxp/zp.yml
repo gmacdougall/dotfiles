@@ -15,7 +15,7 @@ windows:
     -
   - window_name: vite
     panes:
-    - shell_command: nvm use && bin/vite dev
+    - shell_command: bin/vite dev
   - window_name: gql
     panes:
-    - shell_command: nvm use && script/graphql_gateway_startup.sh
+    - shell_command: script/graphql_gateway_startup.sh

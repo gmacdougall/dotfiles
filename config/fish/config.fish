@@ -66,4 +66,8 @@ function git_origin_main_branch
   echo "origin/"(git_main_branch)
 end
 
-rtx activate fish | source
+if test -e /opt/homebrew/bin/rtx
+  /opt/homebrew/bin/rtx activate fish | source
+else
+  rtx activate fish | source
+end
