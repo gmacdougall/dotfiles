@@ -9,7 +9,7 @@
     - ~/.config/fish
     - ~/.config/fish/functions
     - ~/.config/git
-    - ~/.config/rtx
+    - ~/.config/mise
     - ~/.local/bin
     - ~/.nvim/undodir
 
@@ -23,7 +23,7 @@
     ~/.config/git/delta.themes.gitconfig: config/git/delta.themes.gitconfig
     ~/.config/git/ignore_global: config/git/ignore_global
     ~/.config/nvim: config/nvim
-    ~/.config/rtx/config.toml: config/rtx/config.toml
+    ~/.config/mise/config.toml: config/mise/config.toml
     ~/.config/tmux: config/tmux
     ~/.config/tmuxp: config/tmuxp
     ~/.local/bin/24_bit_color: local/bin/24_bit_color
