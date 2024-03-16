@@ -1,5 +1,5 @@
 [tools]
 
-ruby = '3.2.2'
+ruby = '3.3.0'
 node = 'lts'
-neovim = '0.9.4'
+neovim = 'latest'
