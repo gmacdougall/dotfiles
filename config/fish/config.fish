@@ -3,7 +3,7 @@ source ~/.config/fish/tide.fish
 
 abbr -a -- dbm bin/rails db:migrate
 abbr -a -- dbsd bin/rails db:schema:dump
-abbr -a -- dc docker-compose
+abbr -a -- dc docker compose
 abbr -a -- dep "bundle && yarn && bin/rails db:migrate"
 abbr -a -- ds devspace
 abbr -a -- g git
