@@ -42,7 +42,7 @@ fzf_configure_bindings --git_status=\cs --git_log=\ch --directory=\cf
 
 set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type file"
-set -gx EDITOR vim
+set -gx EDITOR nvim
 set -gx AWS_OKTA_BACKEND pass
 
 fish_add_path $HOME/.cargo/bin
