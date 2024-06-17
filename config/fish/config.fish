@@ -66,8 +66,8 @@ function git_origin_main_branch
   echo "origin/"(git_main_branch)
 end
 
-if test -e /opt/homebrew/bin/mise
-  /opt/homebrew/bin/mise activate fish | source
+if test -e /opt/homebrew/opt/mise/bin/mise
+  /opt/homebrew/opt/mise/bin/mise activate fish | source
 else
   mise activate fish | source
 end
