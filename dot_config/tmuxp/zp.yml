@@ -1,0 +1,21 @@
+session_name: zp
+start_directory: ~/dev/zenpayroll
+windows:
+  - window_name: code
+    panes:
+    -
+  - window_name: ds
+    panes:
+    - shell_command: rs
+  - window_name: rc c
+    panes:
+    - shell_command: rc
+  - window_name: test
+    panes:
+    -
+  - window_name: vite
+    panes:
+    - shell_command: bin/vite dev
+  - window_name: gql
+    panes:
+    - shell_command: script/graphql_gateway_startup.sh

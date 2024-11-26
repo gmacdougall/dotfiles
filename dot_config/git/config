@@ -1,0 +1,58 @@
+[color]
+  ui = true
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[alias]
+  s = status
+  st = status
+  su = submodule update
+  cp = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  rc = rebase --continue
+  recentbranches = "!r() { git for-each-ref --sort=-committerdate refs/heads --format='%(color:yellow)%(refname:short) %(color:bold green)%(committerdate:relative) %(color:magenta)%(authorname)%(color:reset) %(color:blue)%(subject)' --color=always --count=50 | column -ts' '; }; r"
+[log]
+  decorate = true
+[push]
+  default = simple
+[rebase]
+  autosquash = true
+[core]
+  editor = /usr/bin/env nvim
+  excludesfile = ~/.config/git/ignore_global
+  pager = delta
+[user]
+  email = gmacdougall0+github@gmail.com
+  name = Gregor MacDougall
+[merge]
+  conflictstyle = diff3
+[include]
+  path = ~/.config/git/config.local
+  path = ~/.config/git/delta.themes.gitconfig
+[init]
+  defaultBranch = main
+[pager]
+  diff = delta
+  reflog = delta
+  show = delta
+[delta]
+  features = tangara-chilensis
+  side-by-side = false
+  minus-style = normal "#390000"
+  minus-style                   = syntax "#37222c"
+  minus-non-emph-style          = syntax "#37222c"
+  minus-emph-style              = syntax "#713137"
+  minus-empty-line-marker-style = syntax "#37222c"
+  line-numbers-minus-style      = "#b2555b"
+  plus-style                    = syntax "#20303b"
+  plus-non-emph-style           = syntax "#20303b"
+  plus-emph-style               = syntax "#2c5a66"
+  plus-empty-line-marker-style  = syntax "#20303b"
+  line-numbers-plus-style       = "#266d6a"
+  line-numbers-zero-style       = "#3b4261"
+[interactive]
+  diffFilter = delta --color-only
+[commit]
+  verbose = true

@@ -1,0 +1,10 @@
+.envrc
+.committer.local.yml
+.netrwhist
+.vimrc.local
+.vimrc
+.solargraph.yml
+**/vendor/bundle/*
+.rgignore
+public/stats.html
+config/initializers/gmacdougall.rb

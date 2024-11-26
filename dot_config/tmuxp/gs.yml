@@ -1,0 +1,18 @@
+session_name: g-sup
+start_directory: ~/dev/gusto-support
+windows:
+  - window_name: code
+    panes:
+    -
+  - window_name: rails s
+    panes:
+    - shell_command: rs
+  - window_name: rails c
+    panes:
+    - shell_command: rc
+  - window_name: webpack
+    panes:
+    - shell_command: yarn start
+  - window_name: test
+    panes:
+    -
