@@ -6,17 +6,4 @@ M.show_diagnostics = function(opts)
   require('telescope.builtin').loclist(opts)
 end
 
--- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
-M.lsp_install_servers = function()
-  local function installLanguageServer(languageServer)
-    vim.cmd('LspInstall ' .. languageServer)
-  end
-
-  installLanguageServer('denols')
-  installLanguageServer('eslint')
-  installLanguageServer('solargraph')
-  installLanguageServer('tailwindcss')
-  installLanguageServer('tsserver')
-end
-
 return M
