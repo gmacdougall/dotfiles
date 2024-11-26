@@ -10,11 +10,15 @@ return {
     require('gm.plugins.aerial'),
   },
   config = function()
+    local present_mason, mason = pcall(require, 'mason')
+    if present_mason then
+      mason.setup()
+    end
+
     require('neodev').setup({})
 
     local lspconfig = require('lspconfig')
 
-    require('gm.plugins.lsp.null-ls')
     local remaps = require('gm.plugins.lsp.remaps')
 
     local presentLspStatus, lsp_status = pcall(require, 'lsp-status')
@@ -157,9 +161,9 @@ return {
     --[[ setupped by typescript package so we need to ensure installed by mason ]]
     table.insert(server_names, 'ts_ls')
 
-    local present_mason, mason = pcall(require, 'mason-lspconfig')
-    if present_mason then
-      mason.setup({ ensure_installed = server_names })
+    local present_mason_lspconfig, mason_lspconfig = pcall(require, 'mason-lspconfig')
+    if present_mason_lspconfig then
+      mason_lspconfig.setup({ ensure_installed = server_names })
     end
 
     if vim.env.SORBET then
