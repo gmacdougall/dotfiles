@@ -60,7 +60,7 @@ return {
 
       try_attach_navic(client, bufnr)
 
-      if client.name == 'tsserver' then
+      if client.name == 'ts_ls' then
         -- let prettier format
         client.server_capabilities.document_formatting = false
         client.server_capabilities.documentFormattingProvider = false
@@ -155,7 +155,7 @@ return {
       table.insert(server_names, server_name)
     end
     --[[ setupped by typescript package so we need to ensure installed by mason ]]
-    table.insert(server_names, 'tsserver')
+    table.insert(server_names, 'ts_ls')
 
     local present_mason, mason = pcall(require, 'mason-lspconfig')
     if present_mason then
