@@ -3,4 +3,5 @@ chezmoi = "latest"
 gh = "latest"
 neovim = "latest"
 node = 'lts'
+ruby = "latest"
 usage = "latest"
