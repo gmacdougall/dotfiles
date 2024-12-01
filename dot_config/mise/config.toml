@@ -1,6 +1,8 @@
 [tools]
+bat = "latest"
 chezmoi = "latest"
 gh = "latest"
+lsd = "latest"
 neovim = "latest"
 node = 'lts'
 ruby = "latest"
