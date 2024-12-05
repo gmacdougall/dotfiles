@@ -1,5 +1,9 @@
 [tools]
 
-ruby = '3.3.1'
+ruby = '3.3.3'
 node = 'lts'
 neovim = 'latest'
+usage = "latest"
+
+[settings]
+experimental = true

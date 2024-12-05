@@ -16,7 +16,7 @@ M.lsp_install_servers = function()
   installLanguageServer('eslint')
   installLanguageServer('solargraph')
   installLanguageServer('tailwindcss')
-  installLanguageServer('tsserver')
+  installLanguageServer('ts_ls')
 end
 
 return M

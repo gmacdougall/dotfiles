@@ -3,7 +3,6 @@ return {
   dependencies = {
     'folke/neodev.nvim',
     'nvim-lua/lsp-status.nvim',
-    'jose-elias-alvarez/typescript.nvim',
     'b0o/schemastore.nvim',
     'williamboman/mason-lspconfig.nvim',
     require('gm.plugins.mason'),
@@ -12,6 +11,8 @@ return {
   config = function()
     require('neodev').setup({})
 
+    -- Not sure why this is needed. It prevents load order issues though
+    require("mason").setup()
     local lspconfig = require('lspconfig')
 
     require('gm.plugins.lsp.null-ls')
@@ -60,7 +61,7 @@ return {
 
       try_attach_navic(client, bufnr)
 
-      if client.name == 'tsserver' then
+      if client.name == 'ts_ls' then
         -- let prettier format
         client.server_capabilities.document_formatting = false
         client.server_capabilities.documentFormattingProvider = false
@@ -129,7 +130,10 @@ return {
     end
 
     local servers = {
-      rubocop = {},
+      rubocop = {
+        -- Server mode is not working currently for unknown reasons
+        cmd = { "mise", "x", "--", "bundle", "exec", "rubocop", "--lsp", "--no-server" }
+      },
       -- ruby_ls = {},
       -- bashls = {},
       -- bashls = {},
@@ -155,7 +159,7 @@ return {
       table.insert(server_names, server_name)
     end
     --[[ setupped by typescript package so we need to ensure installed by mason ]]
-    table.insert(server_names, 'tsserver')
+    table.insert(server_names, 'ts_ls')
 
     local present_mason, mason = pcall(require, 'mason-lspconfig')
     if present_mason then
