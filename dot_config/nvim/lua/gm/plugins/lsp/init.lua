@@ -3,7 +3,6 @@ return {
   dependencies = {
     'folke/neodev.nvim',
     'nvim-lua/lsp-status.nvim',
-    'jose-elias-alvarez/typescript.nvim',
     'b0o/schemastore.nvim',
     'williamboman/mason-lspconfig.nvim',
     require('gm.plugins.mason'),
