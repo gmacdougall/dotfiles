@@ -21,6 +21,9 @@ return {
   require('gm.plugins.lsp'),
   require('gm.plugins.trouble'),
 
+  -- TypeScript
+  require('gm.plugins.typescript'),
+
   -- Quickfix
   require('gm.plugins.bqf'),
 
@@ -36,4 +39,10 @@ return {
 
   -- Performance
   require('gm.plugins.startup-time'),
+
+  -- Completion
+  require('gm.plugins.blink'),
+
+  -- LLM
+  require('gm.plugins.codecompanion'),
 }

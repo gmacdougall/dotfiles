@@ -1,4 +1,4 @@
-local js_formatters = { { 'prettierd', 'prettier' } }
+local js_formatters = { 'prettierd', 'prettier', stop_after_first = true }
 if vim.env.LSP_DENO then
   js_formatters = { 'deno_fmt' }
 end

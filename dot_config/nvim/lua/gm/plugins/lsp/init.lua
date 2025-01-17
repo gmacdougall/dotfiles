@@ -157,8 +157,6 @@ return {
     for server_name, _ in pairs(servers) do
       table.insert(server_names, server_name)
     end
-    --[[ setupped by typescript package so we need to ensure installed by mason ]]
-    table.insert(server_names, 'ts_ls')
 
     local present_mason_lspconfig, mason_lspconfig = pcall(require, 'mason-lspconfig')
     if present_mason_lspconfig then
@@ -169,32 +167,10 @@ return {
       servers['sorbet'] = require('gm.plugins.lsp.servers.sorbet')(capabilities)
     end
 
-    local present_typescript, typescript = pcall(require, 'typescript')
-
     if vim.env.LSP_DENO then
       servers['denols'] = require('gm.plugins.lsp.servers.deno')
-      if present_typescript then
-        typescript.setup({
-          server = {
-            on_attach = function(client, bufnr)
-              on_attach(client, bufnr)
-            end,
-            root_dir = lspconfig.util.root_pattern('tsconfig.json'),
-            single_file_support = false,
-          },
-        })
-      end
     else
       servers['eslint'] = require('gm.plugins.lsp.servers.eslint')
-      if present_typescript then
-        typescript.setup({
-          server = {
-            on_attach = function(client, bufnr)
-              on_attach(client, bufnr)
-            end,
-          },
-        })
-      end
     end
 
     for server_name, server_config in pairs(servers) do
