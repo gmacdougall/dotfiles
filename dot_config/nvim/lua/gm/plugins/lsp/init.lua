@@ -49,8 +49,6 @@ return {
     end
 
     local function on_attach(client, bufnr)
-      -- print(client.name)
-      -- require("gm.utils.functions").tprint_keys(client.server_capabilities)
       remaps.set_default_on_buffer(client, bufnr)
 
       if presentLspStatus then

@@ -11,7 +11,7 @@ return {
     { '<leader>7', '<cmd>BufferLineGoToBuffer 7<CR>', desc = 'Switch to Buffer 7' },
     { '<leader>8', '<cmd>BufferLineGoToBuffer 8<CR>', desc = 'Switch to Buffer 8' },
     { '<leader>9', '<cmd>BufferLineGoToBuffer 9<CR>', desc = 'Switch to Buffer 9' },
-    { '<leader>10', '<cmd>BufferLineGoToBuffer 10<CR>', desc = 'Switch to Buffer 10' },
+    { '<leader>0', '<cmd>BufferLineGoToBuffer 10<CR>', desc = 'Switch to Buffer 10' },
     { '<C-c>', ':bd<CR>', desc = 'Close the current buffer' },
   },
   config = function()

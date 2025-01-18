@@ -3,9 +3,6 @@ local vim = vim
 
 local M = {}
 
-local telescope_builtin = require('telescope.builtin')
-local lsp_functions = require('gm.plugins.lsp.functions')
-
 local function generate_buf_keymapper(bufnr)
   return function(type, input, output, description, extraOptions)
     local options = { buffer = bufnr }
@@ -42,26 +39,11 @@ function M.set_default_on_buffer(client, bufnr)
     buf_set_keymap('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation')
   end
 
-  if cap.referencesProvider then
-    -- buf_set_keymap('n','<leader>tr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap('n', 'gr', telescope_builtin.lsp_references, 'Show references')
-    -- buf_set_keymap('n', 'gr', '<cmd>Trouble lsp_references<cr>', 'lsp',
-    --                'lsp_references', 'Show references')
-  end
-
   if cap.hoverProvider then
     buf_set_keymap('n', 'K', vim.lsp.buf.hover, 'Hover documentation')
   end
 
-  if cap.documentSymbolProvider then
-    -- buf_set_keymap('n','<leader>to', '<cmd>lua vim.lsp.buf.document_symbol()<CR>', opts)
-    buf_set_keymap('n', '<leader>tO', telescope_builtin.lsp_document_symbols, 'Document symbols')
-  end
-
   buf_set_keymap('n', '<leader>ts', vim.lsp.buf.signature_help, 'Show signature')
-
-  buf_set_keymap('n', '<leader>te', lsp_functions.show_diagnostics, 'Show diagnostics')
-  buf_set_keymap('n', '<leader>tE', lsp_functions.show_diagnostics, 'Show diagnostics')
 
   buf_set_keymap('n', '[', vim.diagnostic.goto_prev, 'Previous diagnostic')
   buf_set_keymap('n', ']', vim.diagnostic.goto_next, 'next diagnostic')
@@ -87,31 +69,6 @@ function M.set_default_on_buffer(client, bufnr)
 
   r.which_key('<leader>ri', 'import')
 
-  buf_set_keymap('n', '<leader>rio', function()
-    if is_typescript then
-      local typescript = require('typescript')
-      typescript.actions.organizeImports()
-    end
-  end, 'Organize imports (TS)')
-
-  buf_set_keymap('n', '<leader>riu', function()
-    if is_typescript then
-      local typescript = require('typescript')
-      typescript.actions.removeUnused()
-    end
-  end, 'Remove unused variables (TS)')
-
-  buf_set_keymap('n', '<leader>rim', function()
-    if is_typescript then
-      local typescript = require('typescript')
-      typescript.actions.addMissingImports()
-    end
-  end, 'Import all (TS)')
-
-  if cap.renameProvider then
-    buf_set_keymap('n', '<leader>rr', vim.lsp.buf.rename, 'Rename')
-  end
-
   buf_set_keymap('n', '<leader>lsc', function()
     print(vim.inspect(vim.lsp.get_active_clients()))
   end, 'LSP clients')
@@ -122,7 +79,5 @@ function M.set_default_on_buffer(client, bufnr)
 
   buf_set_keymap('n', '<leader>lsa', ':LspInfo()<CR>', 'LSP Info')
 end
-
-r.which_key('<leader>ls', 'servers')
 
 return M

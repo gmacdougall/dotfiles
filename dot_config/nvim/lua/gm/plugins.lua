@@ -10,7 +10,7 @@ return {
   require('gm.plugins.alpha'),
 
   -- Keybindings
-  require('gm.plugins.legendary'),
+  require('gm.plugins.which-key'),
 
   -- Treesitter
   require('gm.plugins.treesitter'),
@@ -28,6 +28,7 @@ return {
   require('gm.plugins.bqf'),
 
   -- Fuzzy Finding
+  require('gm.plugins.fzf-lua'),
   require('gm.plugins.telescope'),
 
   -- Testing
