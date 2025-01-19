@@ -1,6 +1,5 @@
 return {
   'nvim-lua/plenary.nvim',
-  require('gm.plugins.filetype'),
 
   -- Theme
   require('gm.plugins.tokyonight'),
@@ -29,7 +28,6 @@ return {
 
   -- Fuzzy Finding
   require('gm.plugins.fzf-lua'),
-  require('gm.plugins.telescope'),
 
   -- Testing
   require('gm.plugins.neotest'),
