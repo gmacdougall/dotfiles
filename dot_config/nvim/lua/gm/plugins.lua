@@ -12,6 +12,7 @@ return {
   require('gm.plugins.which-key'),
 
   -- Treesitter
+  require('gm.plugins.aerial'),
   require('gm.plugins.treesitter'),
 
   -- LSP

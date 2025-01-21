@@ -23,8 +23,9 @@ local function try_add_to_which_key_by_input(input, description)
         which_key_lazy_registers = nil
       end
 
-      which_key.register({
-        [input] = description,
+      which_key.add({
+        input,
+        { desc = description },
       })
     else
       lazy_register_which_key(input, description)

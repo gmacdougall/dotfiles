@@ -16,6 +16,7 @@ return {
         'jsonlint',
         'rubocop',
         'ruby_ls',
+        'eslint-lsp',
       },
 
       auto_update = false,

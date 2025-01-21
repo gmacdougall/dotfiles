@@ -6,7 +6,6 @@ return {
     'b0o/schemastore.nvim',
     'williamboman/mason-lspconfig.nvim',
     require('gm.plugins.mason'),
-    require('gm.plugins.aerial'),
   },
   config = function()
     local present_mason, mason = pcall(require, 'mason')
