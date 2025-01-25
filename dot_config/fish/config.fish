@@ -1,6 +1,7 @@
 fish_vi_key_bindings
 source ~/.config/fish/tide.fish
 
+abbr -a -- cm chezmoi
 abbr -a -- dbm bin/rails db:migrate
 abbr -a -- dbsd bin/rails db:schema:dump
 abbr -a -- dc docker compose
