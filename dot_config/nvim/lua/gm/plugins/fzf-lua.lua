@@ -4,8 +4,13 @@ return {
   keys = {
     {
       '<leader>e',
-      '<cmd>FzfLua files<CR>',
+      (vim.env.BIG_REPO and '<cmd>FzfLua git_files<CR>' or '<cmd>FzfLua files<CR>'),
       desc = 'Find files',
+    },
+    {
+      '<leader>s',
+      '<cmd>FzfLua git_status<CR>',
+      desc = 'Find modified files',
     },
     {
       '<leader>fg',

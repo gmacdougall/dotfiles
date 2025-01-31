@@ -20,7 +20,7 @@
 [rebase]
   autosquash = true
 [core]
-  editor = /usr/bin/env nvim
+  editor = nvim
   excludesfile = ~/.config/git/ignore_global
   pager = delta
 [user]

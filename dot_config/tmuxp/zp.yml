@@ -18,4 +18,4 @@ windows:
     - shell_command: bin/vite dev
   - window_name: gql
     panes:
-    - shell_command: script/graphql_gateway_startup.sh
+      - shell_command: bin/rails graphql:federation
