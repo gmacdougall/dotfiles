@@ -4,6 +4,12 @@
   current = yellow reverse
   local = yellow
   remote = green
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
 [alias]
   s = status
   st = status
@@ -17,17 +23,27 @@
   decorate = true
 [push]
   default = simple
+  autoSetupRemote = true
+  followTags = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
 [rebase]
   autosquash = true
+  autoStash = true
+  updateRefs = true
 [core]
   editor = nvim
   excludesfile = ~/.config/git/ignore_global
   pager = delta
+[help]
+  autocorrect = prompt
 [user]
   email = gmacdougall0+github@gmail.com
   name = Gregor MacDougall
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 [include]
   path = ~/.config/git/config.local
   path = ~/.config/git/delta.themes.gitconfig
