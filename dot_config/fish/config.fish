@@ -45,6 +45,7 @@ set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type file"
 set -gx EDITOR nvim
 set -gx AWS_OKTA_BACKEND pass
+set -gx RIPGREP_CONFIG_PATH ~/.config/ripgrep/rc
 
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.deno/bin
