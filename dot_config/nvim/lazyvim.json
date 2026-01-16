@@ -1,0 +1,13 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.lang.typescript",
+    "lazyvim.plugins.extras.util.chezmoi"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "11866"
+  },
+  "version": 8
+}
