@@ -1,9 +1,12 @@
 [tools]
 bat = "latest"
 chezmoi = "latest"
+deno = "latest"
 gh = "latest"
 lsd = "latest"
 neovim = "latest"
 node = 'lts'
+python = 'latest'
 ruby = "latest"
 usage = "latest"
+ripgrep = "latest"
