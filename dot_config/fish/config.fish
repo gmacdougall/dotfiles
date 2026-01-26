@@ -5,7 +5,6 @@ abbr -a -- cm chezmoi
 abbr -a -- dbm bin/rails db:migrate
 abbr -a -- dbsd bin/rails db:schema:dump
 abbr -a -- dc docker compose
-abbr -a -- dep "bundle && yarn && bin/rails db:migrate"
 abbr -a -- ds devspace
 abbr -a -- g git
 abbr -a -- gap git add -p
@@ -28,15 +27,6 @@ abbr -a -- tpl tmuxp load
 abbr -a -- tzp tmuxp load zp
 abbr -a -- v vim
 abbr -a -- y yarn
-
-# I install packages at different places in arch
-if test -e /usr/bin/pacman
-  set -U CHRUBY_ROOT /usr
-else if test -e /opt/homebrew/bin/brew
-  # rbenv on macos
-else
-  set -U CHRUBY_ROOT $HOME/.local
-end
 
 set fish_greeting
 fzf_configure_bindings --git_status=\cs --git_log=\ch --directory=\cf
@@ -66,6 +56,12 @@ end
 
 function git_origin_main_branch
   echo "origin/"(git_main_branch)
+end
+
+function dep
+  test -f Gemfile && bundle || true
+  test -f package.json && yarn || true
+  return 0
 end
 
 if test -e /opt/homebrew/opt/mise/bin/mise
