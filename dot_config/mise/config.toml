@@ -3,10 +3,16 @@ bat = "latest"
 chezmoi = "latest"
 deno = "latest"
 gh = "latest"
+httpie-go = "latest"
+just = "latest"
 lsd = "latest"
 neovim = "latest"
 node = 'lts'
 python = 'latest'
 ruby = "latest"
+rust = "latest"
 usage = "latest"
 ripgrep = "latest"
+
+[env]
+JUST_JUSTFILE="gmacdougall.justfile"
